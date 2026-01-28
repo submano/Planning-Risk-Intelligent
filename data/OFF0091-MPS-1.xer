@@ -1,0 +1,712 @@
+ERMHDR	24.12	2026-01-28	Project	UI290007	Park, Jangwon (UI290007)	dbxDatabaseNoName	Project Management	EUR
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	€	.	,	#1.1	(#1.1)	EURO	EUR	3	1
+%R	10	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	4.163239
+%R	11	2	A$	.	,	#1.1	(#1.1)	Australian Dollar	AUST	3	1.634447
+%R	13	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	2.72498
+%R	14	2	£	.	,	#1.1	(#1.1)	British Pound	U.K.	3	0.678893
+%R	15	2	CA$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.496074
+%R	16	2	Y	.	,	#1.1	(#1.1)	Chinese Yuan	CNY	3	10.410127
+%R	17	2	$	.	,	#1.1	(#1.1)	Dollar	USD	3	1
+%R	20	2	HK$	.	,	#1.1	(#1.1)	Hong Kong Dollar	HKD	3	10.580161
+%R	21	2	Rs	.	,	#1.1	(#1.1)	Indian Rupee	INR	3	55.027277
+%R	23	2	¥	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	162.588217
+%R	24	2	K	.	,	#1.1	(#1.1)	Korean Won	KRW	3	1251.194716
+%R	25	2	N$	.	,	#1.1	(#1.1)	Mexican Peso	MXN	3	14.604215
+%R	26	2	R	.	,	#1.1	(#1.1)	Russian Rouble	RUB	3	34.919387
+%R	28	2	Sk	.	,	#1.1	(#1.1)	Swedish Krona	SEK	3	9.208362
+%R	29	2	kr	.	,	#1.1	(#1.1)	Swiss Franc	CHF	3	1.648843
+%R	30	2	NIS	.	,	#1.1	(#1.1)	Israel Shekel	ILS	3	5.36315
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	NONWORK
+%F	nonwork_type_id	seq_num	nonwork_code	nonwork_type
+%R	11	20005	VAC	Vacation
+%R	12	4	JURY	Jury Duty
+%R	13	3	HOL	Holiday
+%R	100	20004	SICK	Sick Leave
+%R	105	1	COH	Corporate Overhead
+%R	106	2	G&A	General & Accounting
+%R	107	10004	PERS	Personal Time
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	595	594	QnBBnmRWa7AAW4cuCmXUhW	10	Offshore Wind	
+%R	596	595	QnBrEsnQwzYQXPVyCmXUhW	20	APAC	
+%T	UDFTYPE
+%F	udf_type_id	table_name	udf_type_name	udf_type_label	logical_data_type	super_flag	indicator_expression	summary_indicator_expression	export_flag
+%R	187	TASK	user_field_187	User Text 1	FT_TEXT	N			
+%R	188	TASK	user_field_188	User Text 2	FT_TEXT	N			
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	last_baseline_update_date	cr_external_key	apply_actuals_date	fintmpl_id	last_schedule_date	matrix_id	last_level_date	hist_interval	hist_level	control_updates_flag	rsrc_role_match_flag	px_enable_publication_flag	publish_spread_assign_level	px_last_update_date	px_priority	schedule_type	location_id	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	sync_wbs_heir_flag	sched_wbs_heir_type	wbs_heir_levels	next_data_date	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	7944	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	Yokji_Rev00					640		1000	10	10	2	500		0	0.0000	2024-08-30 00:00	2024-08-28 00:00		2031-09-30 17:00	2024-10-28 09:07			DT_FixedDUR2	A	2MVtZAPRQxNKlEL8CgGYAw	QT_Hour	UI290007			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc					1	2025-03-24 06:07			Month	HL_None	N	N	N	SL_Taskrsrc		50			1					N	WBS_Com	4			1899-12-30 00:00		
+%R	8660	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	OFF0091-MPS-1					640	9477	1000	10	10	2	500		0	0.0000	2025-04-11 00:00	2024-08-28 00:00		2031-09-30 17:00	2025-02-17 10:07			DT_FixedDUR2	A	GcVSwn4NBIN6863KCgGYAw	QT_Hour	UI290007			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc					1	2025-08-06 06:41			Month	HL_None	N	N	N	SL_Taskrsrc		50			7	Y				N	WBS_Com	4			1899-12-30 00:00		
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	592	N	RWE 8h / 7d Workweek			2022-09-16 00:00	CA_Base	8	56	244	2920	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|44820)(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))))))
+%R	597	N	RWE 8h / 5d Workweek			2022-09-19 00:00	CA_Base	8	40	180	2160	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|N)())  (0||Exceptions()())))
+%R	638	N	RWE 8h / 6d Workweek			2021-06-16 00:00	CA_Base	8	48	208	2496	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|16:00)())))    (0||3()(      (0||0(s|08:00|f|16:00)())))    (0||4()(      (0||0(s|08:00|f|16:00)())))    (0||5()(      (0||0(s|08:00|f|16:00)())))    (0||6()(      (0||0(s|08:00|f|16:00)())))    (0||7()(      (0||0(s|08:00|f|16:00)())))))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%R	639	N	RWE 12h / 7d			2025-07-10 00:00	CA_Base	12	84	360	4380	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()(      (0||0(s|06:00|f|18:00)())))    (0||2()(      (0||0(s|06:00|f|18:00)())))    (0||3()(      (0||0(s|06:00|f|18:00)())))    (0||4()(      (0||0(s|06:00|f|18:00)())))    (0||5()(      (0||0(s|06:00|f|18:00)())))    (0||6()(      (0||0(s|06:00|f|18:00)())))    (0||7()(      (0||0(s|06:00|f|18:00)())))))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%R	640	Y	RWE 24h / 7d (Standard)			2025-07-16 00:00	CA_Base	24	168	732	8760	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()(      (0||0(s|00:00|f|00:00)())))    (0||2()(      (0||0(s|00:00|f|00:00)())))    (0||3()(      (0||0(s|00:00|f|00:00)())))    (0||4()(      (0||0(s|00:00|f|00:00)())))    (0||5()(      (0||0(s|00:00|f|00:00)())))    (0||6()(      (0||0(s|00:00|f|00:00)())))    (0||7()(      (0||0(s|00:00|f|00:00)())))))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()())))
+%R	2180	N	 Standard 5 Day Workweek			2015-11-02 00:00	CA_Base	8	40	174	2000	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|39937)())    (0||1(d|39958)())    (0||2(d|40056)())    (0||3(d|40172)())    (0||4(d|40175)())    (0||5(d|40176)())    (0||6(d|40177)())    (0||7(d|40178)())    (0||8(d|40179)())    (0||9(d|40539)())    (0||10(d|40540)())    (0||11(d|40541)())    (0||12(d|40542)())    (0||13(d|40543)())    (0||14(d|40903)())    (0||15(d|40904)())    (0||16(d|40905)())    (0||17(d|40906)())    (0||18(d|40907)())    (0||19(d|40910)())    (0||20(d|41268)())    (0||21(d|41269)())    (0||22(d|41270)())    (0||23(d|41271)())    (0||24(d|41274)())    (0||25(d|41275)())    (0||26(d|41276)())    (0||27(d|41299)())))))
+%R	84921	N	RWE Korea 5d	8660	2180	2025-04-15 00:00	CA_Project	8	40	174	2000	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|39937)())    (0||1(d|39958)())    (0||2(d|40056)())    (0||3(d|40172)())    (0||4(d|40175)())    (0||5(d|40176)())    (0||6(d|40177)())    (0||7(d|40178)())    (0||8(d|40179)())    (0||9(d|40539)())    (0||10(d|40540)())    (0||11(d|40541)())    (0||12(d|40542)())    (0||13(d|40543)())    (0||14(d|40903)())    (0||15(d|40904)())    (0||16(d|40905)())    (0||17(d|40906)())    (0||18(d|40907)())    (0||19(d|40910)())    (0||20(d|41268)())    (0||21(d|41269)())    (0||22(d|41270)())    (0||23(d|41271)())    (0||24(d|41274)())    (0||25(d|41275)())    (0||26(d|41276)())    (0||27(d|41299)())    (0||28(d|45782)())    (0||29(d|45783)())    (0||30(d|45811)())    (0||31(d|45814)())    (0||32(d|45884)())    (0||33(d|45933)())    (0||34(d|45936)())    (0||35(d|45937)())    (0||36(d|45938)())    (0||37(d|45939)())    (0||38(d|46016)())))))
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	level_float_thrs_cnt	level_outer_assign_flag	level_outer_assign_priority	level_over_alloc_pct	level_within_float_flag	level_keep_sched_date_flag	level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	1	8660	SD_Both	N	Y	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	5	25	N	Y	Y	Y	N	Y	10	Y		priority_type,ASC_BY_FIELD/ASC
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	2206728	7944	596	200	1	Y	N	WS_Open	Yokji_Rev00	Yokji Jwasari Offshore Windfarm		2688505	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	2MVtZAPRQxNKlEL8CgGYAw		
+%R	2206729	7944	596	6	1	N	N	WS_Open	1	Permit & Consent		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	VWOSVHUgYE+xx8vE/P1gcg		
+%R	2206730	7944	596	7	1	N	N	WS_Open	3	Stakeholder Management		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	GOM4OB6FuEO6yWZHm7c6QQ		
+%R	2206731	7944	596	8	1	N	N	WS_Open	4	WTG		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	K62lIHP6x0ykTnFXFDJ1YQ		
+%R	2206732	7944	596	1	1	N	N	WS_Open	1	Procurement and Contract		2206731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	DxBofIC55ES/kDlZKi19bg		
+%R	2206733	7944	596	2	1	N	N	WS_Open	2	Design and Engineering		2206731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PpwEs6LXQE2RpgsGEVbBmg		
+%R	2206734	7944	596	3	1	N	N	WS_Open	5	Milestones		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NBmvxw/ckE6oQSqdpURiPA		
+%R	2206735	7944	596	5	1	N	N	WS_Open	6	SI Offshore		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	QxsEv0+3/ka7vzRSmTWoBQ		
+%R	2206736	7944	596	2	1	N	N	WS_Open	2	EIA		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	UiCnZGF0QkG/dRTm9JHo+w	n3bT2l0zk0q0TOF7+n5oZw	
+%R	2206737	7944	596	3	1	N	N	WS_Open	2	EIA Scoping		2206736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	vHVoY5lCfkCDYZU7eRXFrQ	/D6M/fIay0aD4hQgABALkg	
+%R	2206738	7944	596	4	1	N	N	WS_Open	3	EIA Surveys		2206736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	qcT/Ga52ak2mK/XGrqSBVw	QxPtODhzAUSPJ4OQekhs1w	
+%R	2206739	7944	596	5	1	N	N	WS_Open	4	EIA Reports		2206736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	oz88X+Iu0023o/n3zF9V8Q	oopKRM4V+UCHOgK8Cei6Sg	
+%R	2206740	7944	596	6	1	N	N	WS_Open	5	Post-EIA approval		2206736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6lb2WYhzNEWcxUrwPiQCow	2jPLG29I00WfKwUyELxl0Q	
+%R	2206741	7944	596	2	1	N	N	WS_Open	1	Survey (Preliminary)		2639552	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	xnOsD5aC9UCvHxgDHRotGA		
+%R	2206742	7944	596	0	1	N	N	WS_Open	2	Environmental		2639552	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	YAGdspNKu0uLUVdx5NZnAA		
+%R	2206743	7944	596	101	1	N	N	WS_Open	3	Metocean Study		2206742	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	g1WO13EXj02Wyrte8xut2g		
+%R	2206744	7944	596	1	1	N	N	WS_Open	1	Wind		2206742	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	/KsRt/+fBU2YIB7/TLcaow		
+%R	2206745	7944	596	1	1	N	N	WS_Open	1	Report		2206741	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+Ofis32RlkKeMIIb0zulGA		
+%R	2206746	7944	596	3	1	N	N	WS_Open	1	Onshore Electrical Facility		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NgxuThaPIkyhWsfSvQVNoA		
+%R	2206747	7944	596	4	1	N	N	WS_Open	14	OPPW		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PuZ94KMowk+8SulN72HNjw	YTuDSgfckU2SjWMS7CXeyA	
+%R	2206748	7944	596	1	1	N	N	WS_Open	1	OPPW (Detailed)		2206747	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+r8jwcd6YUWQu/ctYEXUAA	UqnaD9rhL0KCG4YKILrPqQ	
+%R	2206749	7944	596	2	1	N	N	WS_Open	2	OPPW Implementation Plan		2206747	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	C7COQYjHWEOdMhV/edpixw	uEFnJ4GAxkS4lNYD009j5g	
+%R	2206750	7944	596	9	1	N	N	WS_Open	7	Foundation		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	9PpobQa68kCX10w8CASqEg		
+%R	2206751	7944	596	10	1	N	N	WS_Open	8	Offshore Substation		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	K7XHlpKnHkGgpLGsEmq6Ew		
+%R	2206752	7944	596	11	1	N	N	WS_Open	9	Onshore Substation		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	z34bFx5A1EORdPrEVuI8PQ		
+%R	2206753	7944	596	13	1	N	N	WS_Open	10	Onshore Cable		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	uhyOf/sRC0eC4Ia2rQPCtg		
+%R	2206754	7944	596	12	1	N	N	WS_Open	11	Offshore Cable		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	4EqnL6oYQUqL5trfHqvI0Q		
+%R	2206755	7944	596	0	1	N	N	WS_Open	1	Mini-FEED		2206764	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	5k15kMv6hESY+grWEj1fCQ		
+%R	2206756	7944	596	1	1	N	N	WS_Open	1	WTG Foundation		2206755	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WAFLpGpyHEKICAduoIJM4w		
+%R	2206757	7944	596	2	1	N	N	WS_Open	2	OFS/OSS Foundation		2206755	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	4V2grrR2Wk2ydzgVZPy31Q		
+%R	2206758	7944	596	1	1	N	N	WS_Open	1	Mini-FEED		2206771	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ITkJGQwSpUGMcrWGMl6oOA		
+%R	2206759	7944	596	1	1	N	N	WS_Open	1	Mini-FEED		2206751	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	chrS9X1Cnk+hA5eTYXd8gA		
+%R	2206760	7944	596	1	1	N	N	WS_Open	1	Mini-FEED		2206781	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	LWV3I6rsSkO1TJMGk6U1+g		
+%R	2206761	7944	596	6	1	N	N	WS_Open	15	Construction Plan		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6GdGHj2WA0eagIWsUp7WzA	WCAh9vS5KUuvhwqX6WTPTA	
+%R	2206762	7944	596	5	1	N	N	WS_Open	12	Site Development Permit		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	S77t2R+41USpuHTvWvt5kg	3GjwY/fbZUGwFxUKYplKmg	
+%R	2206763	7944	596	1	1	N	N	WS_Open	2	FEED and Detailed Design		2206764	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	m355H1UKM0ye324hZGTY6Q		
+%R	2206764	7944	596	2	1	N	N	WS_Open	3	Design and Engineering		2206750	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lQ+PGOjx90KfaeOhprqs5A		
+%R	2206765	7944	596	3	1	N	N	WS_Open	1	Manufacturing/Fabrication		2206750	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	spRFKrtMGEOQcLvHq9YcxQ		
+%R	2206766	7944	596	1	1	N	N	WS_Open	2	Procurement and Contract		2206750	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	E72uEjgG80+w5UlwwFNe6Q		
+%R	2206767	7944	596	4	1	N	N	WS_Open	4	Transport & Installation		2206750	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	uyffwrk8H0eRE6W/gfX3/Q		
+%R	2206768	7944	596	3	1	N	N	WS_Open	3	Manufacturing/Fabrication		2206731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XtXVhFTHYUCwibT9aPPIhw		
+%R	2206769	7944	596	4	1	N	N	WS_Open	4	Transport & Installation		2206731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ZdWV7zZKH0O9WfiGf0P8vA		
+%R	2206770	7944	596	1	1	N	N	WS_Open	2	Procurement and Contract		2206754	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	T+YBge3qk06l3r1wiHdIpQ		
+%R	2206771	7944	596	2	1	N	N	WS_Open	3	Design and Engineering		2206754	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	RtoNfZQpeEmeOQG/CyqniQ		
+%R	2206772	7944	596	4	1	N	N	WS_Open	1	Manufacturing/Fabrication		2206754	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	LnMaQWCsuk6IZA0NeHqQXQ		
+%R	2206773	7944	596	5	1	N	N	WS_Open	4	Transport & Installation		2206754	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	G3uKbVH7kUSuy0E/Igmafg		
+%R	2206774	7944	596	1	1	N	N	WS_Open	2	Procurement and Contract		2206753	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Kjx8pPxjuEiW9GyBmtyFdg	T+YBge3qk06l3r1wiHdIpQ	
+%R	2206775	7944	596	4	1	N	N	WS_Open	3	Manufacturing/Fabrication		2206753	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	3gYSCjceMkWJfVz4do26gQ	LnMaQWCsuk6IZA0NeHqQXQ	
+%R	2206776	7944	596	5	1	N	N	WS_Open	4	Transport & Installation		2206753	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NdZ1zFYgG0uLOI1PcD+y6Q	G3uKbVH7kUSuy0E/Igmafg	
+%R	2206777	7944	596	1	1	N	N	WS_Open	2	Procurement and Contract		2206752	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	mnb5j1WbA0Srk894wP/XQw	T+YBge3qk06l3r1wiHdIpQ	
+%R	2206778	7944	596	3	1	N	N	WS_Open	1	Manufacturing/Fabrication		2206752	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	2iy7xt4qE06EEF5yi32EIQ	LnMaQWCsuk6IZA0NeHqQXQ	
+%R	2206779	7944	596	4	1	N	N	WS_Open	4	Transport & Installation		2206752	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	AHDkfaLeLkSsb5a5XDTdKg	G3uKbVH7kUSuy0E/Igmafg	
+%R	2206780	7944	596	2	1	N	N	WS_Open	3	Design and Engineering		2206752	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pYS11uj1P0uJQ7v7tna9tg		
+%R	2206781	7944	596	2	1	N	N	WS_Open	5	Design and Engineering		2206753	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	qveocST4oU2LGrjB4qOICA		
+%R	2206782	7944	596	4	1	N	N	WS_Open	2	Project Management		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	kUUIHSs4hEqj9OyxoR670Q		
+%R	2206783	7944	596	1	1	N	N	WS_Open	1	Project Finance		2206782	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WCrRODG7G0iFF4HCmCChDA		
+%R	2206784	7944	596	2	1	N	N	WS_Open	2	Partnering & Transaction		2206782	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	v3SK0iK7iUesUoABfjA34Q		
+%R	2211511	7944	596	1	1	N	N	WS_Open	3	Survey (Detailed)		2639552	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	1sgPwHfiG0uQFayoNQ6D9Q	xnOsD5aC9UCvHxgDHRotGA	
+%R	2211512	7944	596	3	1	N	N	WS_Open	1	Report		2211511	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6sD9EgQYB0ipFvgZU7YDYQ	+Ofis32RlkKeMIIb0zulGA	
+%R	2211513	7944	596	2	1	N	N	WS_Open	2	EPC Design		2206751	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Im6Z9jmENk+XZFwV1KVPtw		
+%R	2211514	7944	596	2	1	N	N	WS_Open	2	EPC Design		2206771	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Sp3hPlvHv0SKPDt8FVcBmw		
+%R	2211515	7944	596	2	1	N	N	WS_Open	2	EPC Design		2206781	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	cNI8rPzISk+j7/Wd9qfR6g		
+%R	2211516	7944	596	14	1	N	N	WS_Open	12	O&M		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	bSTRYYyjJkiRBGnXwnDI+g		
+%R	2303115	7944	596	1	1	N	N	WS_Open	3	MTSA		2206729	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	OEC1Kan4SkCRcRdVzddczg		
+%R	2639549	7944	596	1	1	N	N	WS_Open	2	WTG Area		2211511	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ih+4DokcAEG9zsT4KkQc5A		
+%R	2639550	7944	596	2	1	N	N	WS_Open	3	Export Cable Route		2211511	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	k5gczf+80UesmMIkeCEQuw		
+%R	2639551	7944	596	2	1	N	N	WS_Open	13	Engineering		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	3k2IUxTzrkafZQFg3rWBLg		
+%R	2639552	7944	596	1	1	N	N	WS_Open	1	Basic Design		2639551	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XK/Bd8Dy9UOKhkBgVGiqyw		
+%R	2640218	8660	596	400	1	Y	N	WS_Open	OFF0091-MPS-1	Yokji Jwasari Offshore Windfarm		2688504	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	GcVSwn4NBIN6863KCgGYAw		
+%R	2640219	8660	596	5	1	N	N	WS_Open	1	Permit & Consent		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	VWOSVHUgYE+xx8vE/P1gcg		
+%R	2640220	8660	596	6	1	N	N	WS_Open	3	Stakeholder Management		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	GOM4OB6FuEO6yWZHm7c6QQ		
+%R	2640221	8660	596	13	1	N	N	WS_Open	4	WTG		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	K62lIHP6x0ykTnFXFDJ1YQ		
+%R	2640222	8660	596	3	1	N	N	WS_Open	1	Procurement and Contract		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	DxBofIC55ES/kDlZKi19bg		
+%R	2640223	8660	596	1	1	N	N	WS_Open	2	Design and Engineering		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PpwEs6LXQE2RpgsGEVbBmg		
+%R	2640224	8660	596	1	1	N	N	WS_Open	5	Milestones		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NBmvxw/ckE6oQSqdpURiPA		
+%R	2640225	8660	596	4	1	N	N	WS_Open	6	SI Offshore		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	QxsEv0+3/ka7vzRSmTWoBQ		
+%R	2640226	8660	596	2	1	N	N	WS_Open	2	EIA		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	UiCnZGF0QkG/dRTm9JHo+w	n3bT2l0zk0q0TOF7+n5oZw	
+%R	2640227	8660	596	3	1	N	N	WS_Open	2	EIA Scoping		2640226	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	vHVoY5lCfkCDYZU7eRXFrQ	/D6M/fIay0aD4hQgABALkg	
+%R	2640228	8660	596	4	1	N	N	WS_Open	3	EIA Surveys		2640226	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	qcT/Ga52ak2mK/XGrqSBVw	QxPtODhzAUSPJ4OQekhs1w	
+%R	2640229	8660	596	5	1	N	N	WS_Open	4	EIA Reports		2640226	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	oz88X+Iu0023o/n3zF9V8Q	oopKRM4V+UCHOgK8Cei6Sg	
+%R	2640230	8660	596	6	1	N	N	WS_Open	5	Post-EIA approval		2640226	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6lb2WYhzNEWcxUrwPiQCow	2jPLG29I00WfKwUyELxl0Q	
+%R	2640236	8660	596	3	1	N	N	WS_Open	1	Onshore Electrical Facility		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NgxuThaPIkyhWsfSvQVNoA		
+%R	2640237	8660	596	4	1	N	N	WS_Open	14	OPPW		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PuZ94KMowk+8SulN72HNjw	YTuDSgfckU2SjWMS7CXeyA	
+%R	2640238	8660	596	1	1	N	N	WS_Open	1	OPPW (Detailed)		2640237	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+r8jwcd6YUWQu/ctYEXUAA	UqnaD9rhL0KCG4YKILrPqQ	
+%R	2640239	8660	596	2	1	N	N	WS_Open	2	OPPW Implementation Plan		2640237	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	C7COQYjHWEOdMhV/edpixw	uEFnJ4GAxkS4lNYD009j5g	
+%R	2640240	8660	596	7	1	N	N	WS_Open	7	Foundation		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	9PpobQa68kCX10w8CASqEg		
+%R	2640242	8660	596	9	1	N	N	WS_Open	9	Onshore Substation		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	z34bFx5A1EORdPrEVuI8PQ		
+%R	2640243	8660	596	11	1	N	N	WS_Open	10	Onshore Cable		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	uhyOf/sRC0eC4Ia2rQPCtg		
+%R	2640244	8660	596	10	1	N	N	WS_Open	11	Offshore Cable		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	4EqnL6oYQUqL5trfHqvI0Q		
+%R	2640245	8660	596	0	1	N	N	WS_Open	1	Mini-FEED		2640254	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	5k15kMv6hESY+grWEj1fCQ		
+%R	2640246	8660	596	1	1	N	N	WS_Open	1	WTG Foundation		2640245	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WAFLpGpyHEKICAduoIJM4w		
+%R	2640247	8660	596	2	1	N	N	WS_Open	2	OFS/OSS Foundation		2640245	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	4V2grrR2Wk2ydzgVZPy31Q		
+%R	2640248	8660	596	1	1	N	N	WS_Open	1	Mini-FEED		2640261	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ITkJGQwSpUGMcrWGMl6oOA		
+%R	2640250	8660	596	1	1	N	N	WS_Open	1	Mini-FEED		2640271	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	LWV3I6rsSkO1TJMGk6U1+g		
+%R	2640251	8660	596	6	1	N	N	WS_Open	15	Construction Plan		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6GdGHj2WA0eagIWsUp7WzA	WCAh9vS5KUuvhwqX6WTPTA	
+%R	2640252	8660	596	5	1	N	N	WS_Open	12	Site Development Permit		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	S77t2R+41USpuHTvWvt5kg	3GjwY/fbZUGwFxUKYplKmg	
+%R	2640253	8660	596	1	1	N	N	WS_Open	2	FEED and Detailed Design		2640254	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	m355H1UKM0ye324hZGTY6Q		
+%R	2640254	8660	596	2	1	N	N	WS_Open	3	Design and Engineering		2640240	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lQ+PGOjx90KfaeOhprqs5A		
+%R	2640255	8660	596	3	1	N	N	WS_Open	1	Manufacturing/Fabrication		2640240	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	spRFKrtMGEOQcLvHq9YcxQ		
+%R	2640256	8660	596	1	1	N	N	WS_Open	2	Procurement and Contract		2640240	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	E72uEjgG80+w5UlwwFNe6Q		
+%R	2640257	8660	596	4	1	N	N	WS_Open	4	Transport & Installation		2640240	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	uyffwrk8H0eRE6W/gfX3/Q		
+%R	2640258	8660	596	2	1	N	N	WS_Open	3	Manufacturing & Fabrication		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XtXVhFTHYUCwibT9aPPIhw		
+%R	2640259	8660	596	4	1	N	N	WS_Open	4	Transport & Installation		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ZdWV7zZKH0O9WfiGf0P8vA		
+%R	2640260	8660	596	1	1	N	N	WS_Open	2	Procurement and Contract		2640244	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	T+YBge3qk06l3r1wiHdIpQ		
+%R	2640261	8660	596	2	1	N	N	WS_Open	3	Design and Engineering		2640244	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	RtoNfZQpeEmeOQG/CyqniQ		
+%R	2640262	8660	596	4	1	N	N	WS_Open	1	Manufacturing/Fabrication		2640244	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	LnMaQWCsuk6IZA0NeHqQXQ		
+%R	2640263	8660	596	5	1	N	N	WS_Open	4	Transport & Installation		2640244	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	G3uKbVH7kUSuy0E/Igmafg		
+%R	2640264	8660	596	1	1	N	N	WS_Open	2	Procurement and Contract		2640243	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Kjx8pPxjuEiW9GyBmtyFdg	T+YBge3qk06l3r1wiHdIpQ	
+%R	2640265	8660	596	4	1	N	N	WS_Open	3	Manufacturing/Fabrication		2640243	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	3gYSCjceMkWJfVz4do26gQ	LnMaQWCsuk6IZA0NeHqQXQ	
+%R	2640266	8660	596	5	1	N	N	WS_Open	4	Transport & Installation		2640243	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NdZ1zFYgG0uLOI1PcD+y6Q	G3uKbVH7kUSuy0E/Igmafg	
+%R	2640267	8660	596	1	1	N	N	WS_Open	2	Procurement and Contract		2640242	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	mnb5j1WbA0Srk894wP/XQw	T+YBge3qk06l3r1wiHdIpQ	
+%R	2640268	8660	596	3	1	N	N	WS_Open	1	Manufacturing/Fabrication		2640242	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	2iy7xt4qE06EEF5yi32EIQ	LnMaQWCsuk6IZA0NeHqQXQ	
+%R	2640269	8660	596	4	1	N	N	WS_Open	4	Transport & Installation		2640242	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	AHDkfaLeLkSsb5a5XDTdKg	G3uKbVH7kUSuy0E/Igmafg	
+%R	2640270	8660	596	2	1	N	N	WS_Open	3	Design and Engineering		2640242	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pYS11uj1P0uJQ7v7tna9tg		
+%R	2640271	8660	596	2	1	N	N	WS_Open	5	Design and Engineering		2640243	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	qveocST4oU2LGrjB4qOICA		
+%R	2640272	8660	596	3	1	N	N	WS_Open	2	Project Management		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	kUUIHSs4hEqj9OyxoR670Q		
+%R	2640273	8660	596	1	1	N	N	WS_Open	1	Project Finance		2640272	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WCrRODG7G0iFF4HCmCChDA		
+%R	2640274	8660	596	2	1	N	N	WS_Open	2	Partnering & Transaction		2640272	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	v3SK0iK7iUesUoABfjA34Q		
+%R	2640278	8660	596	2	1	N	N	WS_Open	2	EPC Design		2640261	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Sp3hPlvHv0SKPDt8FVcBmw		
+%R	2640279	8660	596	2	1	N	N	WS_Open	2	EPC Design		2640271	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	cNI8rPzISk+j7/Wd9qfR6g		
+%R	2640280	8660	596	12	1	N	N	WS_Open	12	O&M		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	bSTRYYyjJkiRBGnXwnDI+g		
+%R	2640281	8660	596	1	1	N	N	WS_Open	3	MTSA		2640219	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	OEC1Kan4SkCRcRdVzddczg		
+%R	2651450	8660	596	3	1	N	N	WS_Open	3	Bid Management		2640272	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	2QYzn1TPUkWDXdUGdbZyeQ		
+%R	2651451	8660	596	1	1	N	N	WS_Open	1	BId Group		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ZZVsUmVlP0uSIdUs1OOrMA		
+%R	2651452	8660	596	2	1	N	N	WS_Open	2	Approval Process		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ScE07zchHUqhb8J/lOqFnQ		
+%R	2666255	8660	596	14	1	N	N	WS_Open	13	Logistics		2640218	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	rDU7dwJpOUm/nJMUGsKPGQ		
+%R	2666260	8660	596	1	1	N	N	WS_Open	1	Package Management		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	W7Px7KXvj0mzJ1mqBoZeqA		
+%R	2666261	8660	596	2	1	N	N	WS_Open	2	Control Room		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6uMLL89KKU6t9Q5ODZ6UrQ		
+%R	2666262	8660	596	3	1	N	N	WS_Open	3	Other Handover		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	9pqhLacC1UO5aXHmBgcHSg		
+%R	2666263	8660	596	4	1	N	N	WS_Open	4	Base Construction Contract (General Contractor)		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ctIFNTvkBUOlqT7ymwL8TA		
+%R	2666264	8660	596	5	1	N	N	WS_Open	5	Logistics Provider		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WPX2YwCJO0ewdNMQXuS2Gw		
+%R	2666265	8660	596	6	1	N	N	WS_Open	6	Base Construction		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Iqbjy0srT0WmhTQDc0B1XA		
+%R	2666266	8660	596	7	1	N	N	WS_Open	7	Building Permit & Design		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	7i5w4WWL/kOmbYBT+vzwRg		
+%R	2666267	8660	596	8	1	N	N	WS_Open	8	O&M Building Construction		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	fBkjV+/vXE6hUoqtXhvk7A		
+%R	2666268	8660	596	9	1	N	N	WS_Open	9	Concept Design		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	14Qr7QrrfU6JSxAiBS6XVQ		
+%R	2666269	8660	596	10	1	N	N	WS_Open	10	Operation and Maintenance Concept		2640280	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	3tfZPgYTr067u85KjrfmYQ		
+%R	2666270	8660	596	0	1	N	N	WS_Open	1	Procurement and Contract		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	G2Qytm/QPkasxa0FyXgrcw	W7Px7KXvj0mzJ1mqBoZeqA	
+%R	2666271	8660	596	1	1	N	N	WS_Open	2	Vessels Overview		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	wwI6k+OVBUmfwg0ZMj6Hvw	6uMLL89KKU6t9Q5ODZ6UrQ	
+%R	2666272	8660	596	2	1	N	N	WS_Open	3	Investigations		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	riekaJ5dx062XjP5iphQ9w	9pqhLacC1UO5aXHmBgcHSg	
+%R	2666273	8660	596	3	1	N	N	WS_Open	4	Offshore Site Management		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6eXNOsoIAUOMjK15dBWSCw	ctIFNTvkBUOlqT7ymwL8TA	
+%R	2666274	8660	596	4	1	N	N	WS_Open	5	Base Port		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	hL3KSYOaJUqfoXPcJM5Xiw	WPX2YwCJO0ewdNMQXuS2Gw	
+%R	2666275	8660	596	5	1	N	N	WS_Open	6	Interim Transportation		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	/nBrIqBG9USpW+9VCL6muA	Iqbjy0srT0WmhTQDc0B1XA	
+%R	2666276	8660	596	6	1	N	N	WS_Open	7	Marshalling Harbor		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6WoNJ9awmUGFrMFQwifZ0A	7i5w4WWL/kOmbYBT+vzwRg	
+%R	2666277	8660	596	7	1	N	N	WS_Open	8	Noise Prognosis Study		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PYgMrAFdGUmC7G1ZkJGxTw	fBkjV+/vXE6hUoqtXhvk7A	
+%R	2666278	8660	596	8	1	N	N	WS_Open	9	Noise Mitigation System		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	fptjD/OrNESuWH192g3xxg	14Qr7QrrfU6JSxAiBS6XVQ	
+%R	2666279	8660	596	9	1	N	N	WS_Open	10	Moise Measurement		2666255	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Ni2KuLYVjEq9xtCg35cN2w	3tfZPgYTr067u85KjrfmYQ	
+%R	2816446	7944	596	1	1	N	N	WS_Open	14	Pre-Bid		2206728	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	UkoDqCUOb0K2tXe1Et/24g		
+%R	2816447	7944	596	0	1	N	N	WS_Open	3	Bid Management		2206782	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	M+YLNps8EU6Mn+7IAG8mZw	2QYzn1TPUkWDXdUGdbZyeQ	
+%R	2816448	7944	596	1	1	N	N	WS_Open	1	BId Group		2816447	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	MmjKUMLAnkWzKFlYhBBAwQ	ZZVsUmVlP0uSIdUs1OOrMA	
+%R	2816449	7944	596	2	1	N	N	WS_Open	2	Approval Process		2816447	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	JY7Pcjgl3EyJbbI+e/mmLw	ScE07zchHUqhb8J/lOqFnQ	
+%R	2816531	8660	596	1	1	N	N	WS_Open	1	Pre-Bid		2640224	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pPMCYRQC/0OXzOwzoYbvVA		
+%R	2816532	8660	596	5	1	N	N	WS_Open	3	Bid Strategy development		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0Ko1jWbUt0atKrIA2r+CNA		
+%R	2816533	8660	596	1	1	N	N	WS_Open	1	LCR		2816532	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	3TOTDr1CK0CEFQkp1GA3Iw		
+%R	2816534	8660	596	1	1	N	N	WS_Open	1	PSA with HDEC for EPCI		2816533	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0Mq0VQ8wzk6gpWxBXCzzkg		
+%R	2816535	8660	596	2	1	N	N	WS_Open	2	PSA with HDEC for Frontier and newbuild WTIV		2816533	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Lp3F41Ip2UmIuiruZPu5eQ		
+%R	2816536	8660	596	3	1	N	N	WS_Open	3	PSA (or LOI) with SGRE+Doosan		2816533	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	PHBIQs6IuUemkkolgZKmQQ		
+%R	2816537	8660	596	4	1	N	N	WS_Open	4	PSA with local suppliers for other PKG (FOU, Cables, Steel)		2816533	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	aRRvfANwzEW8ktzv11T3fg		
+%R	2816538	8660	596	6	1	N	N	WS_Open	6	Public ownership		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	e8pyUzzmCEqXLDSIg1ff+Q		
+%R	2816539	8660	596	7	1	N	N	WS_Open	8	Port logistics and O&M		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Gvx/TZYSHkObvquVpZrHrQ		
+%R	2816540	8660	596	9	1	N	N	WS_Open	7	Grid Acceptance		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	UCwaL795K0GW2ROmvaCXsA		
+%R	2816541	8660	596	12	1	N	N	WS_Open	9	Community acceptance		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	cfnXi9ILc0W7QKREW67DxA		
+%R	2816542	8660	596	3	1	N	N	WS_Open	4	Regulatory Affair		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	kF653k3gK0ay2LMB8zMHVw		
+%R	2816543	8660	596	11	1	N	N	WS_Open	5	Competitor Analysis		2651450	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	EjNcordspkWwgRj1hlLjDg		
+%R	2816544	8660	596	1	1	N	N	WS_Open	1	Paartnership with Genco		2816538	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	wtK41zeO3E2zZPKb6o+veA		
+%R	2816545	8660	596	1	1	N	N	WS_Open	1	MOA with Genco for O&M		2816539	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	J07on+Egs0C1S1ASOqFpjQ		
+%R	2816546	8660	596	2	1	N	N	WS_Open	2	PSA with HDEC for Frontier and newbuild WTIV		2816539	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	dh/y/QLQ8kutVQpB0eeoaQ		
+%R	2816547	8660	596	3	1	N	N	WS_Open	3	PSA with LS/Taihan for CLV		2816539	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	QKGPxbhcpk2m6FOrRqKejw		
+%R	2816548	8660	596	4	1	N	N	WS_Open	4	LOI with local suppliers (Drone, ROV, CTV, O&M Port)		2816539	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	O528d561KEe2wSp1xXX7tw		
+%R	2816549	8660	596	5	1	N	N	WS_Open	5	MOU with local Uni and training centre		2816539	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lM/EASHJEEWq/cr9mpqwXg		
+%R	2816550	8660	596	1	1	N	N	WS_Open	1	Reactive power performance		2816540	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	9vjr+iJVbEKwhcHh2k9HiQ		
+%R	2816551	8660	596	2	1	N	N	WS_Open	2	LVRT performance		2816540	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	zVajTEaLk0GzV/kmggw3Yg		
+%R	2816552	8660	596	1	1	N	N	WS_Open	1	Regional consultation body		2816541	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	cLTyk6/rmUGsaoOQ8PyLgg		
+%R	2816553	8660	596	2	1	N	N	WS_Open	2	Communication		2816541	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	JRVmfDklTUaEUGlg2rGckA		
+%R	2816554	8660	596	3	1	N	N	WS_Open	3	Cpmpensation		2816541	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lublnnmJhU+AmUz3rRxJqA		
+%R	2816555	8660	596	4	1	N	N	WS_Open	4	Community investment program		2816541	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Z6QL++CbBEW6XsbodFqz2w		
+%R	2816556	8660	596	5	1	N	N	WS_Open	5	Conflicts management plan		2816541	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	jxuiUkZTfU6p1rqbKW2SVw		
+%R	2816557	8660	596	1	1	N	N	WS_Open	1	Clarification with MOTIE/KEA on auction criteria		2816542	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	dscYxiLox0i4cs3+LDHRfg		
+%R	2816558	8660	596	102	1	N	N	WS_Open	3	Q4 25 REC auction		2816542	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XJ6RVg41/kCHNPhvwIdTbA		
+%R	2816559	8660	596	101	1	N	N	WS_Open	2	Q2 25 REC auction		2816542	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6iOed6U1M06rxJuRHKctaQ		
+%R	3056172	8660	596	5	1	N	N	WS_Open	5	Package HSE Management		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ek4XMrrdykiAx/KgHMdhAQ		
+%R	3056173	8660	596	6	1	N	N	WS_Open	6	Package Quality Management		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	EeGqoUXhVU+Otx39H8r/Vg		
+%R	3056174	8660	596	7	1	N	N	WS_Open	7	Commissioning & Energisation		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	gHQd/Qm9Dk6Iys2dPKjCMA		
+%R	3056176	8660	596	8	1	N	N	WS_Open	8	Taking-Over, Close-out & Handover		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	xP2OAczoKkqbVsQ6oIyaFA		
+%R	3056177	8660	596	9	1	N	N	WS_Open	9	Operations & Maintenance		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	FjyjRQgXa0akBUf1l9+sGg		
+%R	3056178	8660	596	10	1	N	N	WS_Open	10	Package Management		2640221	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	jildZBItXE+10mbP7DAi2g		
+%T	ACTVTYPE
+%F	actv_code_type_id	actv_short_len	seq_num	actv_code_type	proj_id	wbs_id	actv_code_type_scope	export_flag
+%R	1683	7	16401	Workstream	370	3682	AS_EPS	
+%R	7136	7	2859	RWE - FID Phase Milestones			AS_Global	
+%R	16515	7	16401	Person in Charge	378	3690	AS_EPS	
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	cbs_id	pre_pess_start_date	pre_pess_finish_date	post_pess_start_date	post_pess_finish_date	create_date	update_date	create_user	update_user	location_id	control_updates_flag	crt_path_num
+%R	12914793	8660	2640222	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A1010	Prepare ITT				0	0	0	0	888	0	0	0		2024-11-14 08:00	2025-02-07 17:00	2026-06-16 13:00	2026-06-16 13:00		2025-04-11 00:00	2025-04-11 00:00			2024-08-30 08:00	2025-01-31 17:00				PT_Normal					eE0ZJfa8zE+HY2Vp5B2Iqg	O63kam1VIEaFOKMcEu18fw			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914794	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1020	ITT Issue & Return		2460	0	640	0	0	0	640	0	0	0				2026-07-20 13:00	2026-11-09 12:00		2025-05-15 08:00	2025-09-03 17:00	2025-05-15 08:00	2025-09-03 17:00	2025-05-15 08:00	2025-09-03 17:00	2026-07-20 13:00	2026-11-09 12:00		PT_Normal					fxsisVTRIUCJTdHadJR4UA	eE0ZJfa8zE+HY2Vp5B2Iqg			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914795	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1030	Evaluation & Short List (2xOEMs)		2460	0	8	0	0	0	8	0	0	0				2026-11-09 13:00	2026-11-10 12:00		2025-09-04 08:00	2025-09-04 17:00	2025-09-04 08:00	2025-09-04 17:00	2025-09-04 08:00	2025-09-04 17:00	2026-11-09 13:00	2026-11-10 12:00		PT_Normal					vn7WNAAHi0a3PoX7u2b82w	fxsisVTRIUCJTdHadJR4UA			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914796	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1040	Final OEM selection		2460	0	280	0	0	0	280	0	0	0				2026-11-10 13:00	2026-12-29 12:00		2025-09-05 08:00	2025-10-23 17:00	2025-09-05 08:00	2025-10-23 17:00	2025-09-05 08:00	2025-10-23 17:00	2026-11-10 13:00	2026-12-29 12:00		PT_Normal					rDzkMc5T90WaVxUWIgBFyw	vn7WNAAHi0a3PoX7u2b82w			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914797	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1050	Developing PSA		2460	0	720	0	0	0	720	0	0	0				2026-12-29 13:00	2027-05-04 12:00		2025-10-24 08:00	2026-02-26 17:00	2025-10-24 08:00	2026-02-26 17:00	2025-10-24 08:00	2026-02-26 17:00	2026-12-29 13:00	2027-05-04 12:00		PT_Normal					4gPCNmMNcUqA77dCuLnAkQ	rDzkMc5T90WaVxUWIgBFyw			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914798	8660	2640222	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A1070	OE Selection and Contract				0	0	0	0	160	0	0	0		2024-07-01 08:00	2024-11-13 17:00	2026-06-16 13:00	2026-06-16 13:00		2025-04-11 00:00	2025-04-11 00:00			2024-08-28 08:00	2024-09-24 17:00				PT_Normal					HB+jJJgc9UCCoQ7E1G/MxA	eE0ZJfa8zE+HY2Vp5B2Iqg			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914799	8660	2640223	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1080	EWA Negotication		2460	0	536	0	0	0	536	0	0	0				2027-05-04 13:00	2027-08-05 12:00		2026-02-27 08:00	2026-06-01 17:00	2026-02-27 08:00	2026-06-01 17:00	2026-02-27 08:00	2026-06-01 17:00	2027-05-04 13:00	2027-08-05 12:00		PT_Normal					HibzaAy4rUaGr9t0hZfAAg	lr+shtRb9kajs9xuxKq7aA			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914800	8660	2640223	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1090	EWA Execution		2460	1216	2608	0	0	0	2608	0	0	0				2027-08-05 13:00	2028-11-03 12:00		2026-06-02 08:00	2027-08-31 17:00	2026-06-02 08:00	2027-08-31 17:00	2026-06-02 08:00	2027-08-31 17:00	2027-08-05 13:00	2028-11-03 12:00		PT_Normal					AiC/bajkcEmC4q5/NK9h5g	HibzaAy4rUaGr9t0hZfAAg			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914801	8660	2640223	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1100	TSA & SMA Negotiation		8520	8520	2608	0	0	0	2608	0	0	0				2030-07-02 08:00	2031-09-30 17:00		2026-06-02 08:00	2027-08-31 17:00	2026-06-02 08:00	2027-08-31 17:00	2026-06-02 08:00	2027-08-31 17:00	2030-07-02 08:00	2031-09-30 17:00		PT_Normal					wFMW1TDsZUq1fEJT/wfK0g	AiC/bajkcEmC4q5/NK9h5g			N	0	0								2025-02-17 10:07	2025-08-06 06:33	UI290007	UI290007		N	
+%R	12914802	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1110	FID		4336	696	0	0	0	0	0	0	0	0	2027-11-30 08:00			2029-12-26 17:00	2029-12-26 17:00		2027-11-30 08:00	2027-11-30 08:00	2027-11-30 08:00	2027-11-30 08:00	2027-11-30 08:00	2027-11-30 08:00	2029-12-26 17:00	2029-12-26 17:00	CS_MEOA	PT_Normal					Xu0GXyGGW0SlkYDriQYGIQ	wFMW1TDsZUq1fEJT/wfK0g			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914803	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1120	COD		0	0	0	0	0	0	0	0	0	0	2031-09-30 17:00			2031-09-30 17:00	2031-09-30 17:00		2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					tXFr2Pvt3E66ka0SAAB8vQ	Xu0GXyGGW0SlkYDriQYGIQ			Y	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914804	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1130	REC Auction Award		5172	0	0	0	0	0	0	0	0	0	2025-12-26 08:00			2028-06-19 12:00	2028-06-19 12:00		2025-12-26 08:00	2025-12-26 08:00	2025-12-26 08:00	2025-12-26 08:00	2025-12-26 08:00	2025-12-26 08:00	2028-06-19 12:00	2028-06-19 12:00	CS_MEOA	PT_Normal					/1cBSPv6l0OoVDnpuMSuag	Xu0GXyGGW0SlkYDriQYGIQ			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914805	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1140	EIA Final Approval		12544	12544	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					ReFgDd/UUkalRsIRrJngLw	/1cBSPv6l0OoVDnpuMSuag			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914806	8660	2640228	592	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A2760	Survey Mobilisation				0	0	0	0	0	0	0	0	2024-06-03 08:00	2024-06-03 08:00	2024-06-03 08:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 00:00	2025-04-11 00:00			2025-01-01 08:00	2025-01-01 08:00			CS_MSOA	PT_Normal					I+wuWhVU6UOtGqB9cBvkVg	GqMEdnV8EUiEjoNwF7Yjjw			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914807	8660	2640228	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A2790	Surveys (legal EIA)		7980	0	1464	0	0	0	2096	0	0	0		2024-06-04 08:00		2028-01-03 13:00	2028-07-04 12:00		2025-04-11 08:00	2025-10-10 17:00	2025-04-11 08:00	2025-10-10 17:00	2024-08-30 08:00	2025-05-18 17:00	2028-01-03 13:00	2028-07-04 12:00		PT_Normal					9m9JNKlbD0yEKZZhKcCiVQ	pBo2XZ+zQEqoFARh6/eoJA			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914808	8660	2640227	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A2820	Prepare preparatory statement for assessment				0	0	0	0	160	0	0	0		2024-04-01 08:00	2024-04-30 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 00:00	2025-04-11 00:00			2024-07-09 08:00	2024-08-05 17:00				PT_Normal					iKeZ0w5Tx0Stfq04BxVO/Q	tRoXF7HIHEKWEKgynAwV/A			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914809	8660	2640229	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A2870	EIA Draft Report from Consultant				0	0	0	0	480	0	0	0		2024-08-30 08:00	2024-11-13 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 08:00	2025-04-11 08:00			2024-08-30 08:00	2024-11-21 17:00				PT_Normal					E+YktZ0tA0aMi1ZiKHXckg	VgkKYaX4wUC7n00og/p+TQ			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914810	8660	2640229	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A2880	EIA Draft Report Employer's review				0	0	0	0	152	0	0	0		2024-11-14 08:00	2024-11-26 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 08:00	2025-04-11 08:00			2024-11-14 08:00	2024-12-10 17:00				PT_Normal					xyPuFxOJZkWGiF0/jlRrww	ycDpYtsQ4ECZA8OAJNDBTA			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914811	8660	2640229	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A2890	Submit Final EIA Report to MOE		5692	0	0	0	0	0	0	0	0	0				2028-02-21 12:00	2028-02-21 12:00		2025-05-29 17:00	2025-05-29 17:00	2025-05-29 17:00	2025-05-29 17:00	2025-05-29 17:00	2025-05-29 17:00	2028-02-21 12:00	2028-02-21 12:00		PT_Normal					GYCgNPW4t0m5CE4qkmJfFg	OyQbknE36EigiyO6NTF14w			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914812	8660	2640229	597	0	N	1	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A2900	Final Approval from MOE on EIA Final Report		5692	0	0	0	0	0	0	0	0	0				2028-06-19 12:00	2028-06-19 12:00		2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2025-09-25 17:00	2028-06-19 12:00	2028-06-19 12:00		PT_Normal					ILWcy1vjlUm/tG3XkygXiw	BH9NsS2SqkSzZmzEmJFR1A			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914813	8660	2640227	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A3020	Form and Operate EIA Council				0	0	0	0	320	0	0	0		2024-05-01 08:00	2024-06-28 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 00:00	2025-04-11 00:00			2024-08-28 08:00	2024-10-22 17:00				PT_Normal					IcvBAR4oTUuMFsmyZZYE4Q	kVLvrJ9L+UODi6DyIEQD6Q			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914814	8660	2640229	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A3080	MOE Examination of Final EIA Report		5692	0	280	0	0	0	280	0	0	0				2028-05-01 13:00	2028-06-19 12:00		2025-08-08 08:00	2025-09-25 17:00	2025-08-08 08:00	2025-09-25 17:00	2025-08-08 08:00	2025-09-25 17:00	2028-05-01 13:00	2028-06-19 12:00		PT_Normal					fEaSqldnS0C8nPyqg6deOA	pts+jJuwvkaKaJBBr+ANMw			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914815	8660	2640229	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A6610	EIA Final Report from Consultant				0	0	0	0	240	0	0	0		2025-03-03 08:00	2025-05-01 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 08:00	2025-04-11 08:00			2025-04-11 08:00	2025-05-22 17:00				PT_Normal					OtHbZQLK8UmoTMfsGNqsnw	s1k0tBUuZ0iIkEbvWhIGvw			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914816	8660	2640229	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A6690	Additional modification based on MOE Pre-feedback		5692	0	400	0	0	0	400	0	0	0				2028-02-21 13:00	2028-05-01 12:00		2025-05-30 08:00	2025-08-07 17:00	2025-05-30 08:00	2025-08-07 17:00	2025-05-30 08:00	2025-08-07 17:00	2028-02-21 13:00	2028-05-01 12:00		PT_Normal					LSfsSMjJ3UWJHDzCy9ZBvg	rAsJSZmutEOirMZpFd6zbA			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914817	8660	2640229	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A8310	EIA Public Consultation				0	0	0	0	320	0	0	0		2024-12-02 08:00	2025-02-28 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 08:00	2025-04-11 08:00			2024-09-13 08:00	2024-11-07 17:00				PT_Normal					YRoIyhYVfUqS8iDEb8B3BA	3zX42APotk6OO/DHem8d/g			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914818	8660	2640230	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A8350	EIA Consultation on changes		9520	0	1424	0	0	0	1424	0	0	0				2030-08-09 08:00	2031-04-15 17:00		2026-01-16 08:00	2026-09-22 17:00	2026-01-16 08:00	2026-09-22 17:00	2026-01-16 08:00	2026-09-22 17:00	2030-08-09 08:00	2031-04-15 17:00		PT_Normal					RV1P++RaeEargHdBiTerGA	BgSdfscKgUigM6qmp0boEQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914819	8660	2640230	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A8360	Follow up EIA		9520	9520	960	0	0	0	960	0	0	0				2031-04-16 08:00	2031-09-30 17:00		2026-09-23 08:00	2027-03-09 17:00	2026-09-23 08:00	2027-03-09 17:00	2026-09-23 08:00	2027-03-09 17:00	2031-04-16 08:00	2031-09-30 17:00		PT_Normal					YZfxAHdZSU63L9R3/NpO0A	SNGefyUPDEi7TotVpmyQKg			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914820	8660	2640229	597	100	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_Complete	A10001	Submit Draft EIA Report to MOE				0	0	0	0	0	0	0	0		2024-11-26 17:00	2024-11-26 17:00	2028-01-03 13:00	2028-01-03 13:00		2025-04-11 08:00	2025-04-11 08:00			2024-11-26 17:00	2024-11-26 17:00				PT_Normal					VRrvzO1pw02Ifv0OYS2X4A	7kYkuBF3AEqQvPSX1qY2YQ			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914828	8660	2640281	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10081	Preliminary MTSA		7640	504	2432	0	0	0	2464	0	0	0		2024-07-01 08:00		2027-11-22 08:00	2028-09-20 17:00		2025-04-11 08:00	2026-02-08 17:00	2025-04-11 08:00	2026-02-08 17:00	2024-08-28 08:00	2025-07-01 17:00	2027-11-22 08:00	2028-09-20 17:00		PT_Normal					pZyEYnr99k+u/IezneEH9A	ZhUCptQIV0+Pm+fzSrx81Q			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914829	8660	2640219	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10091	Preliminary RIA		7376	240	2696	0	0	0	2096	0	0	0		2024-07-01 08:00		2027-10-20 08:00	2028-09-20 17:00		2025-04-11 08:00	2026-03-13 17:00	2025-04-11 08:00	2026-03-13 17:00	2024-08-28 08:00	2025-05-16 17:00	2027-10-20 08:00	2028-09-20 17:00		PT_Normal					IOWFWmtaN0uhTEnc9uf82g	pZyEYnr99k+u/IezneEH9A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914830	8660	2640219	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10101	Preliminary FDII		7136	0	2936	0	0	0	1600	0	0	0		2024-06-03 08:00		2027-09-20 08:00	2028-09-20 17:00		2025-04-11 08:00	2026-04-12 17:00	2025-04-11 08:00	2026-04-12 17:00	2024-08-28 08:00	2025-03-15 17:00	2027-09-20 08:00	2028-09-20 17:00		PT_Normal					TeFhgqFJOk6GVj2qVLARug	IOWFWmtaN0uhTEnc9uf82g			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914831	8660	2640220	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A10111	Investigate persons entitled				0	0	0	0	400	0	0	0		2024-01-01 08:00	2024-02-29 17:00	2027-12-23 08:00	2027-12-23 08:00		2025-04-11 00:00	2025-04-11 00:00			2024-12-02 08:00	2025-02-07 17:00				PT_Normal					iy5VAfzBYkK2pJ7VI46DQA	fxsisVTRIUCJTdHadJR4UA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914832	8660	2640220	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A10121	Public Consultation and settle win-win program				0	0	0	0	400	0	0	0		2024-01-01 08:00	2024-08-23 17:00	2027-12-23 08:00	2027-12-23 08:00		2025-04-11 00:00	2025-04-11 00:00			2024-12-02 08:00	2025-02-07 17:00				PT_Normal					NPt1YcnrVkaAtITTlCM5+A	iy5VAfzBYkK2pJ7VI46DQA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914833	8660	2640220	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10131	Negotiation for sigining consent form		5632	0	960	0	0	0	960	0	0	0				2027-12-23 08:00	2028-06-07 17:00		2025-04-11 08:00	2025-09-25 17:00	2025-04-11 08:00	2025-09-25 17:00	2025-04-11 08:00	2025-09-25 17:00	2027-12-23 08:00	2028-06-07 17:00		PT_Normal					sOUc3Wd8sk2xfwIEqj3bCw	O63kam1VIEaFOKMcEu18fw			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914834	8660	2640220	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10141	Sigining consent form		5632	216	960	0	0	0	960	0	0	0				2028-06-08 08:00	2028-11-22 17:00		2025-09-26 08:00	2026-03-12 17:00	2025-09-26 08:00	2026-03-12 17:00	2025-09-26 08:00	2026-03-12 17:00	2028-06-08 08:00	2028-11-22 17:00		PT_Normal					1ixh2YN8HE+GVVGKKWm3OQ	sOUc3Wd8sk2xfwIEqj3bCw			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914835	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10151	Draft City Management Plan (Modification)		5416	0	880	0	0	0	880	0	0	0		2024-08-30 08:00		2027-11-16 08:00	2028-04-17 17:00		2025-04-11 08:00	2025-09-11 17:00	2025-04-11 08:00	2025-09-11 17:00	2024-08-30 08:00	2025-01-30 17:00	2027-11-16 08:00	2028-04-17 17:00		PT_Normal					SLGuuFQSr0i4ysJ+ocN+aQ	YZfxAHdZSU63L9R3/NpO0A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914836	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10161	Formulate City Management Plan		11824	0	320	0	0	0	320	0	0	0				2031-05-14 08:00	2031-07-08 17:00		2025-09-12 08:00	2025-11-06 17:00	2025-09-12 08:00	2025-11-06 17:00	2025-09-12 08:00	2025-11-06 17:00	2031-05-14 08:00	2031-07-08 17:00		PT_Normal					U4ZvAOp8oU+SGhEWm4zN7g	SLGuuFQSr0i4ysJ+ocN+aQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914837	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10171	Perform administrative procedure		11824	11824	480	0	0	0	480	0	0	0				2031-07-09 08:00	2031-09-30 17:00		2025-11-07 08:00	2026-01-29 17:00	2025-11-07 08:00	2026-01-29 17:00	2025-11-07 08:00	2026-01-29 17:00	2031-07-09 08:00	2031-09-30 17:00		PT_Normal					JNTB7bEzHUWUgn6+Whe84w	U4ZvAOp8oU+SGhEWm4zN7g			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914838	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10191	Investigate Landowners		5416	0	480	0	0	0	480	0	0	0				2028-03-21 08:00	2028-06-12 17:00		2025-08-15 08:00	2025-11-06 17:00	2025-08-15 08:00	2025-11-06 17:00	2025-08-15 08:00	2025-11-06 17:00	2028-03-21 08:00	2028-06-12 17:00		PT_Normal					Mjd6Nhfawk6AqI1fwCnNcw	JNTB7bEzHUWUgn6+Whe84w			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914839	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10201	Acquisition of Land Rights		10864	10864	1440	0	0	0	1440	0	0	0				2031-01-22 08:00	2031-09-30 17:00		2025-11-07 08:00	2026-07-16 17:00	2025-11-07 08:00	2026-07-16 17:00	2025-11-07 08:00	2026-07-16 17:00	2031-01-22 08:00	2031-09-30 17:00		PT_Normal					RbmFu3M0q0GzvDfMGDzKyQ	Mjd6Nhfawk6AqI1fwCnNcw			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914840	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10211	Signing Consent form of use		5416	0	536	0	0	0	536	0	0	0				2028-06-13 08:00	2028-09-13 17:00		2025-11-07 08:00	2026-02-09 17:00	2025-11-07 08:00	2026-02-09 17:00	2025-11-07 08:00	2026-02-09 17:00	2028-06-13 08:00	2028-09-13 17:00		PT_Normal					HMn5cu6j2UuxHntJ7we5rw	Mjd6Nhfawk6AqI1fwCnNcw			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914841	8660	2640238	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A2610	OPPW (Occupation or Use Permit of Public Waters)		5104	0	1360	0	0	0	1360	0	0	0				2028-09-21 08:00	2029-05-16 17:00		2026-04-13 08:00	2026-12-04 17:00	2026-04-13 08:00	2026-12-04 17:00	2026-04-13 08:00	2026-12-04 17:00	2028-09-21 08:00	2029-05-16 17:00		PT_Normal					Si9cbtP56kKXo0y8Ms9C0g	GuL6LN25aEGzSf8ZYxAq9A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914842	8660	2640239	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A5270	Approval of the implementation plan for OPPW		5104	0	800	0	0	0	800	0	0	0				2029-05-17 08:00	2029-10-03 17:00		2026-12-07 08:00	2027-04-23 17:00	2026-12-07 08:00	2027-04-23 17:00	2026-12-07 08:00	2027-04-23 17:00	2029-05-17 08:00	2029-10-03 17:00		PT_Normal					PRNaKzmxm0Knh88OpTWZkw	AZXj9ZFUv0uZIqneOQfCeA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914847	8660	2640224	597	100	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_Complete	A10271	Substation Concept Decision				0	0	0	0	0	0	0	0		2025-01-13 17:00	2025-01-13 17:00	2027-12-23 08:00	2027-12-23 08:00		2025-04-11 00:00	2025-04-11 00:00			2024-12-09 17:00	2024-12-09 17:00				PT_Normal					G5hWSza+1U6kx+gwaeAV3Q	Xu0GXyGGW0SlkYDriQYGIQ			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914848	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10281	Windfarm Layout Ready		8352	8352	0	0	0	0	0	0	0	0	2027-09-30 08:00			2031-09-30 17:00	2031-09-30 17:00		2027-09-30 08:00	2027-09-30 08:00	2027-09-30 08:00	2027-09-30 08:00	2027-09-30 08:00	2027-09-30 08:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					Ll+9UfvVv0q3dBiau257+g	G5hWSza+1U6kx+gwaeAV3Q			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914852	8660	2640224	597	100	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_Complete	A10321	Basic Design Complete				0	0	0	0	0	0	0	0	2025-04-30 08:00	2025-05-30 08:00	2025-05-30 08:00	2031-09-30 17:00	2031-09-30 17:00		2025-04-11 00:00	2025-04-11 00:00			2025-04-30 08:00	2025-04-30 08:00			CS_MEOA	PT_Normal					RVRhmMWj8UuSY70SjWDO9g	Xu0GXyGGW0SlkYDriQYGIQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914854	8660	2640251	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A2840	Electricity Facility Construction Plan Approval (before FID - contractor must be procured)		5104	768	0	0	0	0	0	0	0	0				2029-12-26 17:00	2029-12-26 17:00		2027-07-16 17:00	2027-07-16 17:00	2027-07-16 17:00	2027-07-16 17:00	2027-07-16 17:00	2027-07-16 17:00	2029-12-26 17:00	2029-12-26 17:00		PT_Normal					LA3OlXT6Vkuq7Ff14W4auw	AksD9I9m/kqhBIQ4B+OMug			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914855	8660	2640251	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A3010	Finalise Construction Plan		5104	0	160	0	0	0	160	0	0	0				2029-10-04 08:00	2029-10-31 17:00		2027-04-26 08:00	2027-05-21 17:00	2027-04-26 08:00	2027-05-21 17:00	2027-04-26 08:00	2027-05-21 17:00	2029-10-04 08:00	2029-10-31 17:00	CS_ALAP	PT_Normal					6/2wcKOo30qk5dTQQVj1gQ	s1XpYeDD1kmnsgrbgoFTzA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914856	8660	2640252	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10341	Prepare Site Development Permit Application		5416	0	400	0	0	0	400	0	0	0				2028-09-14 08:00	2028-11-22 17:00		2026-02-10 08:00	2026-04-20 17:00	2026-02-10 08:00	2026-04-20 17:00	2026-02-10 08:00	2026-04-20 17:00	2028-09-14 08:00	2028-11-22 17:00		PT_Normal					9EIO8aFCwk+p9V8RXKKOOQ	PaLP6z0Dr0i17PS1G4H2sA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914857	8660	2640252	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10351	Consultation with relevant departments		5416	0	880	0	0	0	880	0	0	0				2028-11-30 08:00	2029-05-02 17:00		2026-04-28 08:00	2026-09-28 17:00	2026-04-28 08:00	2026-09-28 17:00	2026-04-28 08:00	2026-09-28 17:00	2028-11-30 08:00	2029-05-02 17:00		PT_Normal					ootKbAb/OUqyUOkIE1u1nA	pyGmiaGSEkqYV2X5gt462w			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914858	8660	2640252	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10361	Submit Site Development Permit Application		5416	0	40	0	0	0	40	0	0	0				2028-11-23 08:00	2028-11-29 17:00		2026-04-21 08:00	2026-04-27 17:00	2026-04-21 08:00	2026-04-27 17:00	2026-04-21 08:00	2026-04-27 17:00	2028-11-23 08:00	2028-11-29 17:00		PT_Normal					qgdK1MV1G0KcmFa8EMxClg	BbN4DrjbIkSeMKvvxskq3w			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914859	8660	2640252	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10371	Site Development Permit Approval		5416	312	160	0	0	0	160	0	0	0				2029-05-03 08:00	2029-05-30 17:00		2026-09-29 08:00	2026-10-26 17:00	2026-09-29 08:00	2026-10-26 17:00	2026-09-29 08:00	2026-10-26 17:00	2029-05-03 08:00	2029-05-30 17:00		PT_Normal					y0NSyj0F4kqOtd+zk8LmSw	GWaAAEs68U6waQhpSoS34A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914860	8660	2640255	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10381	Foundation Jacket Fabrication		5008	1888	3760	0	0	0	3760	0	0	0	2027-10-01 08:00			2030-04-01 08:00	2031-09-30 16:00		2028-03-31 08:00	2029-09-29 16:00	2028-03-31 08:00	2029-09-29 16:00	2028-03-31 08:00	2029-09-29 16:00	2030-04-01 08:00	2031-09-30 16:00	CS_MSOA	PT_Normal					UgumaaqEk0WA3pQX+vRt3Q	0NZu0LXbcE2jm95v0hipqw			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914861	8660	2640257	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10391	Foundation Jacket Installation		8389	8389	2564	0	0	0	2564	0	0	0	2029-04-01 08:00			2031-03-01 09:00	2031-09-30 17:00		2029-04-01 08:00	2029-10-31 16:00	2029-04-01 08:00	2029-10-31 16:00	2029-04-01 08:00	2029-10-31 16:00	2031-03-01 09:00	2031-09-30 17:00	CS_MSOA	PT_Normal					UAOvpEvP60a2G8S8BK9iHA	0NZu0LXbcE2jm95v0hipqw			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914862	8660	2640258	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10401	WTG Manufacturing		1493	0	5008	0	0	0	5008	0	0	0	2027-07-30 08:00			2028-11-03 13:00	2030-11-04 13:00		2028-03-31 08:00	2030-03-30 16:00	2028-03-31 08:00	2030-03-30 16:00	2028-03-31 08:00	2030-03-30 16:00	2028-11-03 13:00	2030-11-04 13:00	CS_MSOA	PT_Normal					oW4TKWYyekq8W99y8v8/0A	UgumaaqEk0WA3pQX+vRt3Q			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914863	8660	2640259	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10411	WTG Installation		2201	1464	2156	0	0	0	2156	0	0	0	2030-04-01 08:00			2030-10-01 13:00	2031-03-30 09:00		2030-04-01 08:00	2030-09-27 16:00	2030-04-01 08:00	2030-09-27 16:00	2030-04-01 08:00	2030-09-27 16:00	2030-10-01 13:00	2031-03-30 09:00	CS_MSOA	PT_Normal					WczFkIT1d02lHTlrFpWvAw	UAOvpEvP60a2G8S8BK9iHA			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914864	8660	2640262	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10421	Offshore Export Cable Manufacturing		5424	0	2512	0	0	0	2512	0	0	0				2030-05-31 08:00	2031-05-31 16:00		2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2030-05-31 08:00	2031-05-31 16:00		PT_Normal					JSCKh1m3PEGy2GUAZRkmTQ	oW4TKWYyekq8W99y8v8/0A			N	0	0								2025-02-17 10:07	2025-07-22 06:18	UI290007	UI290007		N	
+%R	12914865	8660	2640263	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10431	Offshore Export Cable  Installation		9495	9495	1462	0	0	0	1462	0	0	0				2031-06-01 07:00	2031-09-30 17:00		2029-03-31 16:00	2029-07-31 14:00	2029-03-31 16:00	2029-07-31 14:00	2029-03-31 16:00	2029-07-31 14:00	2031-06-01 07:00	2031-09-30 17:00		PT_Normal					G6go/8QLqkWNtlkO6xvpAw	UAOvpEvP60a2G8S8BK9iHA			N	0	0								2025-02-17 10:07	2025-07-22 06:18	UI290007	UI290007		N	
+%R	12914866	8660	2640262	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10441	Offshore IAC Cable Manufacturing		4185	0	1408	0	0	0	1408	0	0	0	2029-01-08 08:00			2030-09-10 09:00	2031-04-03 09:00		2029-01-08 08:00	2029-07-31 16:00	2029-01-08 08:00	2029-07-31 16:00	2029-01-08 08:00	2029-07-31 16:00	2030-09-10 09:00	2031-04-03 09:00	CS_MSOA	PT_Normal					NkSR384F+EOe5sS391Nr1Q	JSCKh1m3PEGy2GUAZRkmTQ			N	0	0								2025-02-17 10:07	2025-07-22 06:19	UI290007	UI290007		N	
+%R	12914867	8660	2640263	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10451	Offshore IAC Cable  Installation 1		7325	1824	1100	0	0	0	1100	0	0	0				2031-04-03 09:00	2031-07-03 17:00		2029-07-31 16:00	2029-10-31 12:00	2029-07-31 16:00	2029-10-31 12:00	2029-07-31 16:00	2029-10-31 12:00	2031-04-03 09:00	2031-07-03 17:00		PT_Normal					qan8WtDcNUKiuj2qH9of9A	G6go/8QLqkWNtlkO6xvpAw			N	0	0								2025-02-17 10:07	2025-07-22 06:19	UI290007	UI290007		N	
+%R	12914868	8660	2640265	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10461	Onshore Export Cable Manufacturing		4368	0	2512	0	0	0	2512	0	0	0				2029-12-28 08:00	2030-12-28 16:00		2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2029-12-28 08:00	2030-12-28 16:00		PT_Normal					SeI1FRrK5UmmTGYyqqRr0Q	JSCKh1m3PEGy2GUAZRkmTQ			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914869	8660	2640266	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10471	Onshore Export Cable Pulling & Jointing		7656	1800	3300	0	0	0	3300	0	0	0				2030-12-29 16:00	2031-09-30 16:00		2029-03-31 16:00	2029-12-31 16:00	2029-03-31 16:00	2029-12-31 16:00	2029-03-31 16:00	2029-12-31 16:00	2030-12-29 16:00	2031-09-30 16:00		PT_Normal					ZhGxqZjcX0iuDdhZTG93ow	qan8WtDcNUKiuj2qH9of9A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914870	8660	2640259	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10481	WTG Delivery		2609	0	2280	0	0	0	2280	0	0	0	2029-03-01 08:00			2030-08-02 13:00	2031-02-08 13:00		2029-12-28 08:00	2030-07-06 08:00	2029-12-28 08:00	2030-07-06 08:00	2029-12-28 08:00	2030-07-06 08:00	2030-08-02 13:00	2031-02-08 13:00	CS_MSOA	PT_Normal					cUoFH89BNUWsOGDk3uJfkw	WczFkIT1d02lHTlrFpWvAw			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914871	8660	2640222	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10491	WTG PSA		11184	11184	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2026-05-21 17:00	2026-05-21 17:00	2026-05-21 17:00	2026-05-21 17:00	2026-05-21 17:00	2026-05-21 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					eGxg6C9Nn02k67SPCMhDlg	4gPCNmMNcUqA77dCuLnAkQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914872	8660	2640222	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10501	NTP for WTG Manufacturing		1244	0	0	0	0	0	0	0	0	0				2028-11-03 12:00	2028-11-03 12:00		2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-11-03 12:00	2028-11-03 12:00		PT_Normal					QmYkGnqsY0m3jLumq9HcdQ	eGxg6C9Nn02k67SPCMhDlg			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914873	8660	2640273	84921	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A10511	FA Selection				0	0	0	0	464	0	0	0		2024-09-04 08:00	2024-11-14 17:00	2031-09-30 17:00	2031-09-30 17:00		2025-04-11 00:00	2025-04-11 00:00			2025-09-04 08:00	2025-12-01 17:00				PT_Normal					CnBZlHOO1kikceLPT/CDgw	yip/nXv8bk+82+kY+rv9pA			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914874	8660	2640273	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10521	Business Case 3		12568	0	176	0	0	0	176	0	0	0	2025-07-28 08:00			2031-08-27 08:00	2031-09-25 17:00		2025-08-08 08:00	2025-09-09 17:00	2025-08-08 08:00	2025-09-09 17:00	2025-08-08 08:00	2025-09-09 17:00	2031-08-27 08:00	2031-09-25 17:00	CS_MSOA	PT_Normal					1KgJseaCGkGdcJeb/PTktA	CnBZlHOO1kikceLPT/CDgw			N	0	0								2025-02-17 10:07	2025-08-06 06:34	UI290007	UI290007		N	
+%R	12914875	8660	2640273	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10541	Business Case 2		12568	0	328	0	0	0	328	0	0	0				2031-07-01 08:00	2031-08-26 17:00		2025-06-12 08:00	2025-08-07 17:00	2025-06-12 08:00	2025-08-07 17:00	2025-06-12 08:00	2025-08-07 17:00	2031-07-01 08:00	2031-08-26 17:00		PT_Normal					9+EmD6LuS0SoHxJ6IDMMcA	CnBZlHOO1kikceLPT/CDgw			N	0	0								2025-02-17 10:07	2025-08-06 06:34	UI290007	UI290007		N	
+%R	12914876	8660	2640273	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10531	Business Case 1		12568	0	280	0	0	0	280	0	0	0	2025-03-10 08:00			2031-05-06 08:00	2031-06-23 17:00		2025-04-11 08:00	2025-06-02 17:00	2025-04-11 08:00	2025-06-02 17:00	2025-04-11 08:00	2025-06-02 17:00	2031-05-06 08:00	2031-06-23 17:00	CS_MSOA	PT_Normal					voEyKDG5ekee/emB9zBdog	1KgJseaCGkGdcJeb/PTktA			N	0	0								2025-02-17 10:07	2025-08-06 06:34	UI290007	UI290007		N	
+%R	12914877	8660	2640270	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10551	ONS EPC Design		8520	0	3264	0	0	0	3264	0	0	0				2030-03-08 08:00	2031-09-30 17:00		2026-02-06 08:00	2027-08-31 17:00	2026-02-06 08:00	2027-08-31 17:00	2026-02-06 08:00	2027-08-31 17:00	2030-03-08 08:00	2031-09-30 17:00		PT_Normal					qErj5fumkkWRPb+oedI7mQ	iNQrF/BMYke1i7jgNRmQKg			N	0	0								2025-02-17 10:07	2025-08-06 06:30	UI290007	UI290007		N	
+%R	12914880	8660	2640274	84921	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A10581	SHA Negotiation				0	0	0	0	1648	0	0	0		2025-03-03 08:00	2025-07-21 17:00	2031-03-10 08:00	2031-03-10 08:00		2025-04-11 00:00	2025-04-11 00:00			2025-09-29 08:00	2026-07-21 17:00				PT_Normal					9BcfCkiuzUCDYs45XVMpOA	56ErAQ0bkUqOSHjIqrk5+Q			N	0	0								2025-02-17 10:07	2025-08-06 06:41	UI290007	UI290007		N	
+%R	12914881	8660	2640273	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10591	Capital injection		13264	13264	152	0	0	0	152	0	0	0				2031-09-04 08:00	2031-09-30 17:00		2025-04-11 08:00	2025-05-09 17:00	2025-04-11 08:00	2025-05-09 17:00	2025-04-11 08:00	2025-05-09 17:00	2031-09-04 08:00	2031-09-30 17:00		PT_Normal					4pRhZHc5BkKJM7D+RA/MDA	56ErAQ0bkUqOSHjIqrk5+Q			N	0	0								2025-02-17 10:07	2025-08-06 06:38	UI290007	UI290007		N	
+%R	12914882	8660	2640219	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10601	MOTIE approval on EBL transfer		16472	16472	2440	0	0	0	2464	0	0	0	2025-03-03 08:00	2024-07-01 08:00		2030-11-30 08:00	2031-09-30 17:00		2025-04-11 08:00	2026-02-09 17:00	2025-04-11 08:00	2026-02-09 17:00	2024-08-28 08:00	2025-07-01 17:00	2030-11-30 08:00	2031-09-30 17:00	CS_MSOA	PT_Normal					rfk4MVNxB0CR2TwZT1nX+A	pZyEYnr99k+u/IezneEH9A			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914883	8660	2640251	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10611	Submit Construction Plan		5104	0	0	0	0	0	0	0	0	0				2029-10-31 17:00	2029-10-31 17:00		2027-05-21 17:00	2027-05-21 17:00	2027-05-21 17:00	2027-05-21 17:00	2027-05-21 17:00	2027-05-21 17:00	2029-10-31 17:00	2029-10-31 17:00	CS_ALAP	PT_Normal					RS2ZwjPERE6nPSaj+Srakg	6/2wcKOo30qk5dTQQVj1gQ			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914884	8660	2640251	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10621	Construction Plan consultation with MOTIE		5104	0	320	0	0	0	320	0	0	0				2029-11-01 08:00	2029-12-26 17:00		2027-05-24 08:00	2027-07-16 17:00	2027-05-24 08:00	2027-07-16 17:00	2027-05-24 08:00	2027-07-16 17:00	2029-11-01 08:00	2029-12-26 17:00		PT_Normal					9kUYeDSPFEKszIpQsu5lnQ	LA3OlXT6Vkuq7Ff14W4auw			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914885	8660	2640236	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10631	Military Management Plan Facility Decision		5172	68	1080	0	0	0	1080	0	0	0				2028-06-19 13:00	2028-12-25 12:00		2025-12-26 08:00	2026-07-02 17:00	2025-12-26 08:00	2026-07-02 17:00	2025-12-26 08:00	2026-07-02 17:00	2028-06-19 13:00	2028-12-25 12:00		PT_Normal					UkuSjRCcWke+aIH6yz+doA	U4ZvAOp8oU+SGhEWm4zN7g			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914886	8660	2640228	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10641	Surveys (Autumn)		17456	0	732	0	0	0	732	0	0	0	2024-10-01 08:00	2024-10-01 08:00		2031-04-02 08:00	2031-07-02 12:00		2025-04-11 08:00	2025-07-11 12:00	2025-04-11 08:00	2025-07-11 12:00	2024-10-01 08:00	2024-12-31 12:00	2031-04-02 08:00	2031-07-02 12:00	CS_MSOA	PT_Normal					MvhxgRvzakSxH9//Dn4e+g	9m9JNKlbD0yEKZZhKcCiVQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914887	8660	2640228	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10651	Surveys (Winter)		17456	17456	724	0	0	0	724	0	0	0				2031-07-02 13:00	2031-09-30 17:00		2025-07-11 13:00	2025-10-09 17:00	2025-07-11 13:00	2025-10-09 17:00	2025-07-11 13:00	2025-10-09 17:00	2031-07-02 13:00	2031-09-30 17:00		PT_Normal					ug+LTRNBDk6HA6os2/Pqfw	MvhxgRvzakSxH9//Dn4e+g			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914901	8660	2640278	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10811	Offshore cable EPC Design		10524	10524	1260	0	0	0	1260	0	0	0				2031-02-21 13:00	2031-09-30 17:00		2026-02-06 08:00	2026-09-15 12:00	2026-02-06 08:00	2026-09-15 12:00	2026-02-06 08:00	2026-09-15 12:00	2031-02-21 13:00	2031-09-30 17:00		PT_Normal					uqHJfJAqkUeJsHHjOf8xew	9lhpG3qnA0KjaqcinoKcpg			N	0	0								2025-02-17 10:07	2025-08-06 06:31	UI290007	UI290007		N	
+%R	12914903	8660	2640270	597	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A10831	Decision on Substation option				0	0	0	0	376	0	0	0	2024-10-10 08:00	2024-10-10 08:00	2025-01-10 17:00	2027-12-23 08:00	2027-12-23 08:00		2025-04-11 00:00	2025-04-11 00:00			2024-10-10 08:00	2024-12-13 17:00			CS_MSOA	PT_Normal					SJtaXm4UIUKDWD1V4eg1uA	qErj5fumkkWRPb+oedI7mQ			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914906	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10861	NTP		1244	0	0	0	0	0	0	0	0	0	2028-03-31 08:00			2028-11-03 12:00	2028-11-03 12:00		2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-03-31 08:00	2028-11-03 12:00	2028-11-03 12:00	CS_MEOA	PT_Normal					EHustaqsD0WJp6x3MH0wXQ	Xu0GXyGGW0SlkYDriQYGIQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914907	8660	2640257	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10871	Foundation Delivery		8793	1080	3240	0	0	0	3240	0	0	0	2029-01-01 08:00			2031-01-03 17:00	2031-09-30 17:00		2029-01-01 08:00	2029-09-28 08:00	2029-01-01 08:00	2029-09-28 08:00	2029-01-01 08:00	2029-09-28 08:00	2031-01-03 17:00	2031-09-30 17:00	CS_MSOA	PT_Normal					KJQ2LYsqAkGIFWgflzplBA	UAOvpEvP60a2G8S8BK9iHA			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914908	8660	2640255	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10881	Foundation Pinpile Fabrication		4784	0	2512	0	0	0	2512	0	0	0				2030-02-27 08:00	2031-02-27 16:00		2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2028-03-31 08:00	2029-03-31 16:00	2030-02-27 08:00	2031-02-27 16:00		PT_Normal					vUkALvibtkS144RL/OewOg	UgumaaqEk0WA3pQX+vRt3Q			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914909	8660	2640257	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10891	Pinpile Installation		8377	8377	2580	0	0	0	2580	0	0	0				2031-02-27 17:00	2031-09-30 17:00		2029-03-31 16:00	2029-11-01 16:00	2029-03-31 16:00	2029-11-01 16:00	2029-03-31 16:00	2029-11-01 16:00	2031-02-27 17:00	2031-09-30 17:00		PT_Normal					IDs6myJPmESKouGk7/i9EQ	UAOvpEvP60a2G8S8BK9iHA			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914911	8660	2640229	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10911	EIA Final Report Employer's review		5692	0	280	0	0	0	120	0	0	0		2025-05-02 08:00		2028-01-03 13:00	2028-02-21 12:00		2025-04-11 08:00	2025-05-29 17:00	2025-04-11 08:00	2025-05-29 17:00	2025-04-11 08:00	2025-05-01 17:00	2028-01-03 13:00	2028-02-21 12:00		PT_Normal					Y98YquBy0k2V+xAjUySHvw	xyPuFxOJZkWGiF0/jlRrww			N	0	0								2025-02-17 10:07	2025-08-06 06:29	UI290007	UI290007		N	
+%R	12914912	8660	2640281	592	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A10921	Marine Traffic Congestion Assessment		7640	0	1232	0	0	0	2464	0	0	0		2024-07-01 08:00		2027-11-22 08:00	2028-04-23 17:00		2025-04-11 08:00	2025-09-11 17:00	2025-04-11 08:00	2025-09-11 17:00	2024-08-28 08:00	2025-07-01 17:00	2027-11-22 08:00	2028-04-23 17:00		PT_Normal					2NQI/fZyyUugkE6f5iV9ow	pZyEYnr99k+u/IezneEH9A			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914913	8660	2640268	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10931	Substation Manufacturing including Transformer		1789	0	4480	0	0	0	4480	0	0	0				2028-12-16 13:00	2030-10-01 13:00		2028-03-31 08:00	2030-01-12 16:00	2028-03-31 08:00	2030-01-12 16:00	2028-03-31 08:00	2030-01-12 16:00	2028-12-16 13:00	2030-10-01 13:00		PT_Normal					k7NJfAqSiEaWoXnmmQycPw	NkSR384F+EOe5sS391Nr1Q			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914914	8660	2640224	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A10941	Grid Ready		2785	2785	0	0	0	0	0	0	0	0	2027-09-30 08:00			2031-09-30 17:00	2031-09-30 17:00		2030-05-30 16:00	2030-05-30 16:00	2030-05-30 16:00	2030-05-30 16:00	2030-05-30 16:00	2030-05-30 16:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					Ztltd0h4bke1uhgtr95wHA	Ll+9UfvVv0q3dBiau257+g			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914915	8660	2640268	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10951	Onshore Substation Commissioning		3344	0	416	0	0	0	416	0	0	0				2031-08-01 08:00	2031-09-30 16:00		2030-04-01 08:00	2030-05-30 16:00	2030-04-01 08:00	2030-05-30 16:00	2030-04-01 08:00	2030-05-30 16:00	2031-08-01 08:00	2031-09-30 16:00		PT_Normal					k3IYhwfE2EeB/1H0nCjUWQ	k7NJfAqSiEaWoXnmmQycPw			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914916	8660	2640268	638	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10961	Onshore Substation Installation		3344	0	1600	0	0	0	1600	0	0	0				2030-12-11 08:00	2031-07-31 16:00		2029-08-10 08:00	2030-03-30 16:00	2029-08-10 08:00	2030-03-30 16:00	2029-08-10 08:00	2030-03-30 16:00	2030-12-11 08:00	2031-07-31 16:00		PT_Normal					LKLVJvvnrEaXOsY+A2EO1A	k3IYhwfE2EeB/1H0nCjUWQ			N	0	0								2025-02-17 10:07	2025-07-14 08:18	UI290007	UI290007		N	
+%R	12914917	8660	2640222	597	100	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_Complete	A10971	ITT Draft Ready				0	0	0	0	0	0	0	0		2025-02-07 17:00	2025-02-07 17:00	2026-06-16 13:00	2026-06-16 13:00		2025-04-11 00:00	2025-04-11 00:00			2025-02-07 17:00	2025-02-07 17:00				PT_Normal					Hzn8CoHLyECHQei3NOEXfA	fxsisVTRIUCJTdHadJR4UA			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914918	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A10981	ITT Employer's review		2460	0	192	0	0	0	192	0	0	0				2026-06-16 13:00	2026-07-20 12:00		2025-04-11 08:00	2025-05-14 17:00	2025-04-11 08:00	2025-05-14 17:00	2025-04-11 08:00	2025-05-14 17:00	2026-06-16 13:00	2026-07-20 12:00		PT_Normal					NckXrexOU06o1mpKzioS5w	fxsisVTRIUCJTdHadJR4UA			N	0	0								2025-02-17 10:07	2025-08-06 06:32	UI290007	UI290007		N	
+%R	12914923	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11031	Internal PSA Approval		11184	0	480	0	0	0	480	0	0	0				2031-07-09 08:00	2031-09-30 17:00		2026-02-27 08:00	2026-05-21 17:00	2026-02-27 08:00	2026-05-21 17:00	2026-02-27 08:00	2026-05-21 17:00	2031-07-09 08:00	2031-09-30 17:00		PT_Normal					hoZrB0pRq0e7cSBtqxD8vQ	4gPCNmMNcUqA77dCuLnAkQ			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12914924	8660	2640222	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11041	Binding Offer		11424	240	480	0	0	0	480	0	0	0				2031-04-16 08:00	2031-07-08 17:00		2025-10-24 08:00	2026-01-15 17:00	2025-10-24 08:00	2026-01-15 17:00	2025-10-24 08:00	2026-01-15 17:00	2031-04-16 08:00	2031-07-08 17:00		PT_Normal					HimTcDdjyEmLueMos7yobA	rDzkMc5T90WaVxUWIgBFyw			N	0	0								2025-02-17 10:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	12955348	8660	2640274	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A11051	Merger clearance by FTC		12240	0	632	0	0	0	320	0	0	0		2025-07-22 08:00		2031-03-10 08:00	2031-06-26 17:00		2025-04-11 08:00	2025-08-05 17:00	2025-04-11 08:00	2025-08-05 17:00	2025-09-29 08:00	2025-11-28 17:00	2031-03-10 08:00	2031-06-26 17:00		PT_Normal					sw97JydHG0eqgRpMaIjqzQ	9BcfCkiuzUCDYs45XVMpOA			N	0	0								2025-02-18 05:36	2025-08-06 06:41	UI290007	UI290007		N	
+%R	12955349	8660	2640274	84921	100	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_Complete	A11061	SHA Signing				0	0	0	0	0	0	0	0		2025-07-22 17:00	2025-07-22 17:00	2031-09-30 17:00	2031-09-30 17:00		2025-04-11 00:00	2025-04-11 00:00			2026-07-21 17:00	2026-07-21 17:00				PT_Normal					T0T58G3PS0G17oMY2ufvjQ	9BcfCkiuzUCDYs45XVMpOA			N	0	0								2025-02-18 05:37	2025-08-06 06:40	UI290007	UI290007		N	
+%R	12955350	8660	2640274	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11071	Paid-in capital		12240	0	0	0	0	0	0	0	0	0				2031-06-26 17:00	2031-06-26 17:00		2025-08-05 17:00	2025-08-05 17:00	2025-08-05 17:00	2025-08-05 17:00	2025-08-05 17:00	2025-08-05 17:00	2031-06-26 17:00	2031-06-26 17:00		PT_Normal					c9qLxMFAzEWNjAusnkm7nw	T0T58G3PS0G17oMY2ufvjQ			N	0	0								2025-02-18 05:38	2025-08-06 06:41	UI290007	UI290007		N	
+%R	12955351	8660	2651452	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11081	Bid submission		12216	0	0	0	0	0	0	0	0	0	2025-11-21 17:00			2031-09-30 17:00	2031-09-30 17:00		2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					APpu8SpO60CA1HNQMkb1rQ	c9qLxMFAzEWNjAusnkm7nw			N	0	0								2025-02-18 05:39	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13038761	8660	2651452	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11091	Gate 2 (AG Approval)		12280	0	0	0	0	0	0	0	0	0	2025-10-31 08:00			2031-09-18 17:00	2031-09-18 17:00		2025-10-31 08:00	2025-10-31 08:00	2025-10-31 08:00	2025-10-31 08:00	2025-10-31 08:00	2025-10-31 08:00	2031-09-18 17:00	2031-09-18 17:00	CS_MEOA	PT_Normal					SpG7aDAuhEyibwNdCl8mDA	56ErAQ0bkUqOSHjIqrk5+Q			N	0	0								2025-02-20 01:38	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13038762	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11101	JV Bid Group (BC3)		12568	360	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					yqnSjlCz8kGJj6AvV0Nk6A	SpG7aDAuhEyibwNdCl8mDA			N	0	0								2025-02-20 01:40	2025-08-06 06:34	UI290007	UI290007		N	
+%R	13038763	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11111	RWE Bid Group (BC3)		12568	0	0	0	0	0	0	0	0	0				2031-09-25 17:00	2031-09-25 17:00		2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2031-09-25 17:00	2031-09-25 17:00		PT_Normal					RAnLFwqnrkCN4wppBYxJCQ	yqnSjlCz8kGJj6AvV0Nk6A			N	0	0								2025-02-20 01:41	2025-08-06 06:34	UI290007	UI290007		N	
+%R	13038766	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11131	JV Bid Group (Final)		12272	12272	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-11-11 17:00	2025-11-11 17:00	2025-11-11 17:00	2025-11-11 17:00	2025-11-11 17:00	2025-11-11 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					l//V5PfFQEGGMfHFqb9YOw	yqnSjlCz8kGJj6AvV0Nk6A			N	0	0								2025-02-20 01:45	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13038767	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11121	RWE Bid Group (Final)		12272	0	0	0	0	0	0	0	0	0				2031-09-25 17:00	2031-09-25 17:00		2025-11-06 17:00	2025-11-06 17:00	2025-11-06 17:00	2025-11-06 17:00	2025-11-06 17:00	2025-11-06 17:00	2031-09-25 17:00	2031-09-25 17:00		PT_Normal					/5s+OL9FAkW/MjbMPYZ/mA	RAnLFwqnrkCN4wppBYxJCQ			N	0	0								2025-02-20 01:45	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13045616	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11141	Bid Submission		12208	12208	0	0	0	0	0	0	0	0	2024-11-21 08:00			2031-09-30 17:00	2031-09-30 17:00		2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					vkJCFLrsUEiw8x+P3X2mnQ	/1cBSPv6l0OoVDnpuMSuag			N	0	0								2025-02-24 06:39	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13045617	8660	2640274	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11151	Application for transfer of rights		12240	0	544	0	0	0	544	0	0	0				2031-06-27 08:00	2031-09-30 17:00		2025-08-06 08:00	2025-11-17 17:00	2025-08-06 08:00	2025-11-17 17:00	2025-08-06 08:00	2025-11-17 17:00	2031-06-27 08:00	2031-09-30 17:00		PT_Normal					jYwvPrVvmUqOtdqfXXDQIw	56ErAQ0bkUqOSHjIqrk5+Q			N	0	0								2025-02-24 09:10	2025-08-06 06:41	UI290007	UI290007		N	
+%R	13045618	8660	2640274	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11161	MOTIE Approval		12240	12240	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-11-17 17:00	2025-11-17 17:00	2025-11-17 17:00	2025-11-17 17:00	2025-11-17 17:00	2025-11-17 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					VRLukKgEA0idpDcvSEz7Mg	c9qLxMFAzEWNjAusnkm7nw			N	0	0								2025-02-24 09:11	2025-08-06 06:41	UI290007	UI290007		N	
+%R	13863770	7944	2816449	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11101	Bid submission		12216	0	0	0	0	0	0	0	0	0	2025-11-21 17:00			2031-09-30 17:00	2031-09-30 17:00		2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2025-11-21 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					ic5wjyB++kqAASckKD3n5w	APpu8SpO60CA1HNQMkb1rQ			N	0	0								2025-04-15 03:42	2025-04-15 03:42	UI290007	UI290007		N	
+%R	13863773	7944	2816448	597	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11131	RWE Bid Group (BC3)		12592	0	0	0	0	0	0	0	0	0				2031-09-25 17:00	2031-09-25 17:00		2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2025-09-12 17:00	2031-09-25 17:00	2031-09-25 17:00		PT_Normal					GMHqJEmlH0mR3YGpMIPY7A	RAnLFwqnrkCN4wppBYxJCQ			N	0	0								2025-04-15 03:42	2025-04-15 03:42	UI290007	UI290007		N	
+%R	13863887	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11171	Business Case 2		12768	12768	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-08-07 17:00	2025-08-07 17:00	2025-08-07 17:00	2025-08-07 17:00	2025-08-07 17:00	2025-08-07 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					LRQPZwb+K06UDfYjJcCqdQ	Ztltd0h4bke1uhgtr95wHA			N	0	0								2025-04-15 03:47	2025-08-06 06:33	UI290007	UI290007		N	
+%R	13863888	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11181	Business Case 3		12592	12592	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2025-09-09 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					moyFm9UrQUyKZUmi+SMnUA	LRQPZwb+K06UDfYjJcCqdQ			N	0	0								2025-04-15 03:48	2025-08-06 06:34	UI290007	UI290007		N	
+%R	13863889	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11191	Costbook update		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					X6v/CI6MX0WIo9IFlSP9Ag	LRQPZwb+K06UDfYjJcCqdQ			N	0	0								2025-04-15 03:49	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863890	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11201	2nd Costbook update		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					6FZIiLvi5Ei/93BJsLE5Ww	X6v/CI6MX0WIo9IFlSP9Ag			N	0	0								2025-04-15 03:49	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863891	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11211	Final Costbook update		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					J2lK/kdAMEiXVJu++cGSlA	6FZIiLvi5Ei/93BJsLE5Ww			N	0	0								2025-04-15 03:50	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863892	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11221	Draft Bid Strategy sign-off		13264	13264	0	0	0	0	0	0	0	0	2025-05-09 17:00			2031-09-30 17:00	2031-09-30 17:00		2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					mAHmLjLRFECWQhYC1+xu2g	J2lK/kdAMEiXVJu++cGSlA			N	0	0								2025-04-15 03:50	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863893	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11231	Final Bid Strategy sign-off		13264	13264	0	0	0	0	0	0	0	0	2025-05-09 17:00			2031-09-30 17:00	2031-09-30 17:00		2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					dWOy9/Od20qP/SQHewrBng	mAHmLjLRFECWQhYC1+xu2g			N	0	0								2025-04-15 03:52	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863894	8660	2816531	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11241	Final bid price		13264	13264	0	0	0	0	0	0	0	0	2025-05-09 17:00			2031-09-30 17:00	2031-09-30 17:00		2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					gy6Wywin60icDC4LAEotqg	dWOy9/Od20qP/SQHewrBng			N	0	0								2025-04-15 03:53	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863896	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11261	JV Bid Group 9		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					9zerzQ0/oEGBGdT73HOIFg	1TisVS/uJk+WrFcxMsvENA			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863897	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11281	JV Bid Group 7		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					pGQdyxB12UCrz3TSv3ECpg	1TisVS/uJk+WrFcxMsvENA			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863898	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11271	JV Bid Group 6		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					eFIO4qc1q0+b/EQQ6eSITw	9zerzQ0/oEGBGdT73HOIFg			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863899	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11321	JV Bid Group 5		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					JLpaxnhqe0+d0H8Qpm/d4w	1TisVS/uJk+WrFcxMsvENA			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863900	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11311	JV Bid Group 4		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					3ylFqt4kaEqhStv3yP+MIA	9zerzQ0/oEGBGdT73HOIFg			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863901	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11301	JV Bid Group 3		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					IGm1njOEokWyctPT7uGlOQ	pGQdyxB12UCrz3TSv3ECpg			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863902	8660	2651451	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11291	JV Bid Group 2		13416	13416	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2025-04-11 08:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					qo70ULD6WkanMwpMGwVbEQ	eFIO4qc1q0+b/EQQ6eSITw			N	0	0								2025-04-15 03:56	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863903	8660	2816534	84921	100	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Complete	A11331	Price template alignment				0	0	0	0	120	0	0	0		2025-03-03 08:00	2025-03-31 17:00	2031-06-09 08:00	2031-06-09 08:00		2025-04-11 00:00	2025-04-11 00:00			2025-05-01 08:00	2025-05-23 17:00				PT_Normal					TcAdXvTDJUq6qpXEaM5e6w	sw97JydHG0eqgRpMaIjqzQ			N	0	0								2025-04-15 04:23	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863904	8660	2816534	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_Active	A11341	EPCI Term & Condition		12760	0	112	0	0	0	320	0	0	0		2025-04-01 08:00		2031-06-09 08:00	2031-06-26 17:00		2025-04-11 08:00	2025-04-30 17:00	2025-04-11 08:00	2025-04-30 17:00	2025-04-11 08:00	2025-06-11 17:00	2031-06-09 08:00	2031-06-26 17:00		PT_Normal					eoCMRpI0mk6ovHrodUSlBA	TcAdXvTDJUq6qpXEaM5e6w			N	0	0								2025-04-15 04:24	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863905	8660	2816534	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11351	Receive Indicative EPCI price		12760	0	160	0	0	0	160	0	0	0				2031-06-27 08:00	2031-07-24 17:00		2025-05-01 08:00	2025-05-30 17:00	2025-05-01 08:00	2025-05-30 17:00	2025-05-01 08:00	2025-05-30 17:00	2031-06-27 08:00	2031-07-24 17:00		PT_Normal					BQiR4hHLXU6/X1shWeo8fg	eoCMRpI0mk6ovHrodUSlBA			N	0	0								2025-04-15 04:24	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863906	8660	2816534	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11361	Go/NoGo with HDEC		13096	13096	320	0	0	0	320	0	0	0				2031-08-06 08:00	2031-09-30 17:00		2025-04-11 08:00	2025-06-11 17:00	2025-04-11 08:00	2025-06-11 17:00	2025-04-11 08:00	2025-06-11 17:00	2031-08-06 08:00	2031-09-30 17:00		PT_Normal					KgeInUEA6ECHgUJamTZuhw	BQiR4hHLXU6/X1shWeo8fg			N	0	0								2025-04-15 04:24	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863907	8660	2816534	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11371	Clarfication & Negotiation on EPCI proposal		12760	0	384	0	0	0	384	0	0	0				2031-07-25 08:00	2031-09-30 17:00		2025-06-02 08:00	2025-08-08 17:00	2025-06-02 08:00	2025-08-08 17:00	2025-06-02 08:00	2025-08-08 17:00	2031-07-25 08:00	2031-09-30 17:00		PT_Normal					x1/PellfCkOFObTfI/bHjw	KgeInUEA6ECHgUJamTZuhw			N	0	0								2025-04-15 04:24	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863908	8660	2816534	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11381	Finalise EPCI price		12760	12760	0	0	0	0	0	0	0	0				2031-09-30 17:00	2031-09-30 17:00		2025-08-08 17:00	2025-08-08 17:00	2025-08-08 17:00	2025-08-08 17:00	2025-08-08 17:00	2025-08-08 17:00	2031-09-30 17:00	2031-09-30 17:00		PT_Normal					rJlFQvijpEWrXyjgLYCgXA	x1/PellfCkOFObTfI/bHjw			N	0	0								2025-04-15 04:24	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863909	8660	2816534	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11391	Sign PSA		12416	12416	0	0	0	0	0	0	0	0	2025-10-17 08:00			2031-09-30 17:00	2031-09-30 17:00		2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					BC5k1VSNjEmErK7160UwVg	rJlFQvijpEWrXyjgLYCgXA			N	0	0								2025-04-15 04:25	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863910	8660	2816535	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11401	Issue RFI		12576	0	0	0	0	0	0	0	0	0	2025-05-09 17:00			2031-06-02 17:00	2031-06-02 17:00		2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2025-05-09 17:00	2031-06-02 17:00	2031-06-02 17:00	CS_MEOA	PT_Normal					duG7fDx1vEmR3AgPq0jU7A	TcAdXvTDJUq6qpXEaM5e6w			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863911	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11411	Receive quotes		12576	0	80	0	0	0	80	0	0	0				2031-06-03 08:00	2031-06-16 17:00		2025-05-12 08:00	2025-05-23 17:00	2025-05-12 08:00	2025-05-23 17:00	2025-05-12 08:00	2025-05-23 17:00	2031-06-03 08:00	2031-06-16 17:00		PT_Normal					OUj1t5ROREmnI3BAQHxjGA	eoCMRpI0mk6ovHrodUSlBA			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863912	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11431	Clarification		12576	0	192	0	0	0	192	0	0	0				2031-06-17 08:00	2031-07-18 17:00		2025-05-26 08:00	2025-06-30 17:00	2025-05-26 08:00	2025-06-30 17:00	2025-05-26 08:00	2025-06-30 17:00	2031-06-17 08:00	2031-07-18 17:00		PT_Normal					72P4QBNq5EiN0743yodudg	BQiR4hHLXU6/X1shWeo8fg			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863913	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11421	Go/NoGo with HDEC		13096	13096	320	0	0	0	320	0	0	0				2031-08-06 08:00	2031-09-30 17:00		2025-04-11 08:00	2025-06-11 17:00	2025-04-11 08:00	2025-06-11 17:00	2025-04-11 08:00	2025-06-11 17:00	2031-08-06 08:00	2031-09-30 17:00		PT_Normal					jYOKIzPAiUWbxLlPD7Nx8g	KgeInUEA6ECHgUJamTZuhw			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863914	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11441	Receive updated quotes		12576	0	112	0	0	0	112	0	0	0				2031-07-21 08:00	2031-08-07 17:00		2025-07-01 08:00	2025-07-18 17:00	2025-07-01 08:00	2025-07-18 17:00	2025-07-01 08:00	2025-07-18 17:00	2031-07-21 08:00	2031-08-07 17:00		PT_Normal					D4V0Mn5oU02oC5oUJVfN0g	x1/PellfCkOFObTfI/bHjw			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863916	8660	2816535	84921	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11461	Sign PSA		12416	12416	0	0	0	0	0	0	0	0	2025-10-17 08:00			2031-09-30 17:00	2031-09-30 17:00		2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2025-10-17 08:00	2031-09-30 17:00	2031-09-30 17:00	CS_MEOA	PT_Normal					7CHwWKa9nky/UbR5b8Cn0g	BC5k1VSNjEmErK7160UwVg			N	0	0								2025-04-15 04:37	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863917	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11471	Issue RFI for local contents info for bid prep		12576	0	192	0	0	0	192	0	0	0				2031-08-08 08:00	2031-09-10 17:00		2025-07-21 08:00	2025-08-22 17:00	2025-07-21 08:00	2025-08-22 17:00	2025-07-21 08:00	2025-08-22 17:00	2031-08-08 08:00	2031-09-10 17:00		PT_Normal					KOgLz2vAsEaSO7kA8T49WA	D4V0Mn5oU02oC5oUJVfN0g			N	0	0								2025-04-15 05:58	2025-07-14 08:03	UI290007	UI290007		N	
+%R	13863918	8660	2816535	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11481	Receive local contents info for bid prep		12576	12576	112	0	0	0	112	0	0	0				2031-09-11 08:00	2031-09-30 17:00		2025-08-25 08:00	2025-09-11 17:00	2025-08-25 08:00	2025-09-11 17:00	2025-08-25 08:00	2025-09-11 17:00	2031-09-11 08:00	2031-09-30 17:00		PT_Normal					gC6LkjfrokW5hYVdV+5xzw	KOgLz2vAsEaSO7kA8T49WA			N	0	0								2025-04-15 05:59	2025-07-14 08:03	UI290007	UI290007		N	
+%R	15161434	8660	2640259	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11491	WTG Pre-assembly		5121	5121	1800	0	0	0	1800	0	0	0				2031-05-03 17:00	2031-09-30 17:00		2030-03-03 08:00	2030-07-31 08:00	2030-03-03 08:00	2030-07-31 08:00	2030-03-03 08:00	2030-07-31 08:00	2031-05-03 17:00	2031-09-30 17:00		PT_Normal					1J40UMQ/D0uMaeSNiEa+UA	WczFkIT1d02lHTlrFpWvAw			N	0	0								2025-06-17 08:07	2025-07-14 08:03	UI290007	UI290007		N	
+%R	15478019	8660	2640259	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11501	WTG Commissioning and Pre-use inspection		737	0	2912	0	0	0	2912	0	0	0	2030-08-01 08:00			2030-10-01 13:00	2031-06-01 09:00		2030-08-01 08:00	2031-03-31 16:00	2030-08-01 08:00	2031-03-31 16:00	2030-08-01 08:00	2031-03-31 16:00	2030-10-01 13:00	2031-06-01 09:00	CS_MSOA	PT_Normal					sYv13V12RU6FGALMBmz5aA	rK2i0zuhvE64ncQgk81AIw			N	0	0								2025-06-23 02:23	2025-07-14 08:03	UI290007	UI290007		N	
+%R	15478020	8660	2640280	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11511	O&M Service Base Construction & Permits		4025	0	5040	0	0	0	5040	0	0	0				2029-03-01 13:00	2030-04-25 13:00		2028-03-31 08:00	2029-05-25 08:00	2028-03-31 08:00	2029-05-25 08:00	2028-03-31 08:00	2029-05-25 08:00	2029-03-01 13:00	2030-04-25 13:00		PT_Normal					2HZZGSz8GEe0AZeBEx8sfw	T2jeA6Zp2Ump05feVEcToA			N	0	0								2025-06-23 03:19	2025-07-14 08:15	UI290007	UI290007		N	
+%R	15478021	8660	2640280	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11521	O&M Control Room Installation		4025	0	1908	0	0	0	1908	0	0	0				2030-04-25 13:00	2030-10-01 13:00		2029-05-25 08:00	2029-10-31 08:00	2029-05-25 08:00	2029-10-31 08:00	2029-05-25 08:00	2029-10-31 08:00	2030-04-25 13:00	2030-10-01 13:00		PT_Normal					HyeWY2BdCE+BTlwHiP75AA	T2jeA6Zp2Ump05feVEcToA			N	0	0								2025-06-23 03:22	2025-07-14 08:16	UI290007	UI290007		N	
+%R	15478022	8660	2640280	639	0	N	0	N	N	CP_Drtn	TT_FinMile	DT_FixedDrtn	TK_NotStart	A11531	O&M Service Base Ready		4025	1824	0	0	0	0	0	0	0	0				2030-10-01 13:00	2030-10-01 13:00		2029-10-31 08:00	2029-10-31 08:00	2029-10-31 08:00	2029-10-31 08:00	2029-10-31 08:00	2029-10-31 08:00	2030-10-01 13:00	2030-10-01 13:00		PT_Normal					wxqddsZtckuzoBDahvQorA	HyeWY2BdCE+BTlwHiP75AA			N	0	0								2025-06-23 03:35	2025-07-14 08:15	UI290007	UI290007		N	
+%R	16224505	8660	2640259	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11541	WTG Final Test		737	737	1460	0	0	0	1460	0	0	0				2031-06-01 09:00	2031-09-30 17:00		2031-03-31 16:00	2031-07-31 12:00	2031-03-31 16:00	2031-07-31 12:00	2031-03-31 16:00	2031-07-31 12:00	2031-06-01 09:00	2031-09-30 17:00		PT_Normal					n0Ism1ke1kSY6CBmY3P6qg	rK2i0zuhvE64ncQgk81AIw			N	0	0								2025-07-14 08:01	2025-07-14 08:03	UI290007	UI290007		N	
+%R	16224506	8660	2640263	639	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11551	Offshore IAC Cable  Installation 2		5501	5501	1068	0	0	0	1068	0	0	0	2030-04-01 12:00			2031-07-03 17:00	2031-09-30 17:00		2030-04-01 12:00	2030-06-29 12:00	2030-04-01 12:00	2030-06-29 12:00	2030-04-01 12:00	2030-06-29 12:00	2031-07-03 17:00	2031-09-30 17:00	CS_MSOA	PT_Normal					B7y1Xoah90aODmXOREPsUw	G6go/8QLqkWNtlkO6xvpAw			N	0	0								2025-07-14 08:07	2025-07-22 06:19	UI290007	UI290007		N	
+%R	16847806	8660	2640225	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A11561	Geotechnical Survey		9046	0	880	0	0	0	880	0	0	0	2026-03-02 08:00			2030-07-01 15:00	2030-12-02 15:00		2026-03-02 08:00	2026-07-31 17:00	2026-03-02 08:00	2026-07-31 17:00	2026-03-02 08:00	2026-07-31 17:00	2030-07-01 15:00	2030-12-02 15:00	CS_MSOA	PT_Normal					5NzoiOro2EyEq1TTyhEn2Q	LSfsSMjJ3UWJHDzCy9ZBvg			N	0	0								2025-08-06 04:30	2025-08-06 06:29	UI290007	UI290007		N	
+%R	16847807	8660	2640253	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1157	Foundation ILA 1		9046	0	870	0	0	0	870	0	0	0				2030-07-01 15:00	2030-11-29 12:00		2026-03-02 08:00	2026-07-30 15:00	2026-03-02 08:00	2026-07-30 15:00	2026-03-02 08:00	2026-07-30 15:00	2030-07-01 15:00	2030-11-29 12:00		PT_Normal					SAZvjvahfUeCkRKmvEKjDw	vUkALvibtkS144RL/OewOg			N	0	0								2025-08-06 04:32	2025-08-06 06:29	UI290007	UI290007		N	
+%R	16847808	8660	2640253	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1158	Foundation ILA 2		9046	0	870	0	0	0	870	0	0	0				2030-11-29 13:00	2031-05-01 10:00		2026-07-30 15:00	2026-12-30 12:00	2026-07-30 15:00	2026-12-30 12:00	2026-07-30 15:00	2026-12-30 12:00	2030-11-29 13:00	2031-05-01 10:00		PT_Normal					5RrOQKXtuUeMc8ZQIZVAwA	SAZvjvahfUeCkRKmvEKjDw			N	0	0								2025-08-06 06:27	2025-08-06 06:29	UI290007	UI290007		N	
+%R	16847809	8660	2640253	84921	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1159	Foundation ILA 3		9046	9046	870	0	0	0	870	0	0	0				2031-05-01 10:00	2031-09-30 17:00		2026-12-30 13:00	2027-06-01 10:00	2026-12-30 13:00	2027-06-01 10:00	2026-12-30 13:00	2027-06-01 10:00	2031-05-01 10:00	2031-09-30 17:00		PT_Normal					J1OHX7ZNNkW60uFhPZ7Hxg	5RrOQKXtuUeMc8ZQIZVAwA			N	0	0								2025-08-06 06:28	2025-08-06 06:29	UI290007	UI290007		N	
+%T	ACTVCODE
+%F	actv_code_id	parent_actv_code_id	actv_code_type_id	actv_code_name	short_name	seq_num	color	total_assignments
+%R	7963		1683	Wind Turbine	WTG	100	0000FF	17
+%R	7972		1683	Stakeholder Management	STK	109	0000FF	4
+%R	7973		1683	Permitting & Consents	CON	110	0000FF	35
+%R	7975		1683	Project Management	PMT	112	0000FF	1
+%R	7977		1683	Wind Resource Team	WIR	114	0000FF	10
+%R	7982		1683	Onshore Electrical	ELE	108	0000FF	2
+%R	8185		1683	Engineering Management	ENG	104	0000FF	21
+%R	40564		1683	Project Finance	PFN	106	0000FF	8
+%R	60560		7136	Summary	SUM	400	0000FF	
+%R	60561	60560	7136	Manufacturing	MAN	0	0000FF	
+%R	60562	60561	7136	Manufacturing Wind Turbine Generator Summary	WTG	201	0000FF	1
+%R	60567	60560	7136	Installation	INS	401	0000FF	
+%R	60569	60567	7136	Installation Wind Turbine Generator Summary	WTG	4	0000FF	2
+%R	130508		16515	Jinman Cho	JM	100	0000FF	2
+%R	339133		1683	Transport & Installation	TNI	1		14
+%R	339934		1683	Partnering & Transaction	PNT	1		35
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	17603951	12914923	12914924	8660	8660	PR_FS	0			2026-01-15 17:00	2031-07-09 08:00
+%R	17603952	12914924	12914796	8660	8660	PR_FS	0			2025-10-23 17:00	2031-04-16 08:00
+%R	17603953	12914872	12914906	8660	8660	PR_FF	0			2028-03-31 08:00	2028-11-03 12:00
+%R	17603954	12914871	12914923	8660	8660	PR_FF	0			2026-05-21 17:00	2031-09-30 17:00
+%R	17603955	12914923	12914797	8660	8660	PR_FS	0			2026-02-26 17:00	2031-07-09 08:00
+%R	17603956	12914794	12914918	8660	8660	PR_FS	0			2025-05-14 17:00	2026-07-20 13:00
+%R	17603957	12914918	12914917	8660	8660	PR_FS	0			2025-04-11 00:00	2026-06-16 13:00
+%R	17603958	12914917	12914793	8660	8660	PR_FS	0			2025-04-11 00:00	2026-06-16 13:00
+%R	17603959	12914871	12914804	8660	8660	PR_FF	0			2025-12-26 08:00	2031-09-30 17:00
+%R	17603963	12914915	12914869	8660	8660	PR_FF	0			2029-11-01 08:00	2031-09-30 16:00
+%R	17603964	12914914	12914915	8660	8660	PR_FF	0			2030-05-30 16:00	2031-09-30 17:00
+%R	17603965	12914915	12914916	8660	8660	PR_FS	0			2030-03-30 16:00	2031-08-01 08:00
+%R	17603966	12914916	12914913	8660	8660	PR_FS	-1072			2029-08-10 08:00	2031-05-15 16:00
+%R	17603967	12914863	12914913	8660	8660	PR_FS	0			2030-01-12 16:00	2030-10-01 13:00
+%R	17603968	12914869	12914868	8660	8660	PR_FS	0			2029-03-31 16:00	2030-12-29 16:00
+%R	17603969	12914868	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2029-12-28 08:00
+%R	17603970	12914913	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2028-12-16 13:00
+%R	17603971	12914805	12914812	8660	8660	PR_FF	0			2025-09-25 17:00	2031-09-30 17:00
+%R	17603972	12914847	12914903	8660	8660	PR_FF	0			2025-04-11 00:00	2027-12-23 08:00
+%R	17603973	12914828	12914912	8660	8660	PR_SS	0			2025-04-11 08:00	2027-06-21 08:00
+%R	17603974	12914811	12914911	8660	8660	PR_FF	0			2025-05-29 17:00	2028-02-21 12:00
+%R	17603975	12914911	12914815	8660	8660	PR_FS	0			2025-04-11 08:00	2028-01-03 13:00
+%R	17603978	12914909	12914908	8660	8660	PR_FS	0			2029-03-31 16:00	2031-02-27 17:00
+%R	17603979	12914908	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2030-02-27 08:00
+%R	17603980	12914867	12914866	8660	8660	PR_FS	0			2029-07-31 16:00	2031-04-03 09:00
+%R	17603981	12914864	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2030-05-31 08:00
+%R	17603982	12914865	12914864	8660	8660	PR_FS	0			2029-03-31 16:00	2031-06-01 07:00
+%R	17603983	12914861	12914907	8660	8660	PR_SS	0			2029-01-01 08:00	2030-06-04 09:00
+%R	17603984	12914907	12914860	8660	8660	PR_SS	0			2028-03-31 08:00	2029-07-05 08:00
+%R	17603985	12914860	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2030-04-01 08:00
+%R	17603986	12914868	12914802	8660	8660	PR_FS	8			2027-11-30 17:00	2029-12-27 08:00
+%R	17603990	12914866	12914802	8660	8660	PR_FS	0			2027-11-30 08:00	2030-09-10 09:00
+%R	17603991	12914864	12914802	8660	8660	PR_FS	8			2027-11-30 17:00	2030-05-30 08:00
+%R	17604006	12914795	12914794	8660	8660	PR_FS	0			2025-09-03 17:00	2026-11-09 13:00
+%R	17604007	12914796	12914795	8660	8660	PR_FS	0			2025-09-04 17:00	2026-11-10 13:00
+%R	17604008	12914797	12914796	8660	8660	PR_FS	0			2025-10-23 17:00	2026-12-29 13:00
+%R	17604009	12914793	12914798	8660	8660	PR_FS	0			2025-04-11 00:00	2026-06-16 13:00
+%R	17604010	12914799	12914797	8660	8660	PR_FS	0			2026-02-26 17:00	2027-05-04 13:00
+%R	17604011	12914801	12914799	8660	8660	PR_FS	0			2026-06-01 17:00	2030-07-02 08:00
+%R	17604012	12914800	12914799	8660	8660	PR_FS	0			2026-06-01 17:00	2027-08-05 13:00
+%R	17604013	12914819	12914818	8660	8660	PR_FS	0			2026-09-22 17:00	2031-04-16 08:00
+%R	17604014	12914818	12914812	8660	8660	PR_FS	640			2026-01-15 17:00	2030-04-19 08:00
+%R	17604015	12914815	12914817	8660	8660	PR_FS	0			2025-04-11 08:00	2028-01-03 13:00
+%R	17604016	12914816	12914811	8660	8660	PR_FS	0			2025-05-29 17:00	2028-02-21 13:00
+%R	17604017	12914814	12914816	8660	8660	PR_FS	0			2025-08-07 17:00	2028-05-01 13:00
+%R	17604018	12914815	12914810	8660	8660	PR_FS	0			2025-04-11 08:00	2028-01-03 13:00
+%R	17604019	12914807	12914806	8660	8660	PR_FS	0			2025-04-11 00:00	2028-01-03 13:00
+%R	17604020	12914809	12914808	8660	8660	PR_FS	0			2025-04-11 00:00	2028-01-03 13:00
+%R	17604021	12914813	12914808	8660	8660	PR_FS	0			2025-04-11 00:00	2028-01-03 13:00
+%R	17604022	12914809	12914813	8660	8660	PR_FS	0			2025-04-11 00:00	2028-01-03 13:00
+%R	17604023	12914810	12914809	8660	8660	PR_FS	0			2025-04-11 08:00	2028-01-03 13:00
+%R	17604024	12914814	12914811	8660	8660	PR_FS	0			2025-05-29 17:00	2028-05-01 13:00
+%R	17604025	12914812	12914814	8660	8660	PR_FS	0			2025-09-25 17:00	2028-06-19 12:00
+%R	17604026	12914806	12914813	8660	8660	PR_FS	0			2025-04-11 00:00	2028-01-03 13:00
+%R	17604027	12914809	12914807	8660	8660	PR_SS	480			2025-04-11 08:00	2027-07-04 13:00
+%R	17604028	12914820	12914810	8660	8660	PR_FS	0			2025-04-11 08:00	2028-01-03 13:00
+%R	17604029	12914817	12914820	8660	8660	PR_FS	80			2025-04-11 08:00	2028-01-03 13:00
+%R	17604031	12914832	12914831	8660	8660	PR_FS	0			2025-04-11 00:00	2027-12-23 08:00
+%R	17604032	12914833	12914832	8660	8660	PR_FS	0			2025-04-11 00:00	2027-12-23 08:00
+%R	17604033	12914834	12914833	8660	8660	PR_FS	0			2025-09-25 17:00	2028-06-08 08:00
+%R	17604034	12914836	12914835	8660	8660	PR_FS	0			2025-09-11 17:00	2031-05-14 08:00
+%R	17604035	12914837	12914836	8660	8660	PR_FS	0			2025-11-06 17:00	2031-07-09 08:00
+%R	17604036	12914838	12914835	8660	8660	PR_FS	-160			2025-08-15 08:00	2028-04-17 17:00
+%R	17604037	12914839	12914838	8660	8660	PR_FS	0			2025-11-06 17:00	2031-01-22 08:00
+%R	17604038	12914840	12914838	8660	8660	PR_FS	0			2025-11-06 17:00	2028-06-13 08:00
+%R	17604039	12914842	12914841	8660	8660	PR_FS	0			2026-12-04 17:00	2029-05-17 08:00
+%R	17604040	12914841	12914828	8660	8660	PR_FS	0			2026-02-08 17:00	2028-09-21 08:00
+%R	17604041	12914841	12914829	8660	8660	PR_FS	0			2026-03-13 17:00	2028-09-21 08:00
+%R	17604042	12914841	12914830	8660	8660	PR_FS	0			2026-04-12 17:00	2028-09-21 08:00
+%R	17604051	12914804	12914812	8660	8660	PR_FF	0			2025-09-25 17:00	2028-06-19 12:00
+%R	17604052	12914858	12914856	8660	8660	PR_FS	0			2026-04-20 17:00	2028-11-23 08:00
+%R	17604053	12914857	12914858	8660	8660	PR_FS	0			2026-04-27 17:00	2028-11-30 08:00
+%R	17604054	12914859	12914857	8660	8660	PR_FS	0			2026-09-28 17:00	2029-05-03 08:00
+%R	17604055	12914856	12914840	8660	8660	PR_FS	0			2026-02-09 17:00	2028-09-14 08:00
+%R	17604056	12914855	12914859	8660	8660	PR_FS	720			2027-03-01 17:00	2029-05-31 08:00
+%R	17604057	12914855	12914842	8660	8660	PR_FS	0			2027-04-23 17:00	2029-10-04 08:00
+%R	17604059	12914862	12914800	8660	8660	PR_FS	0			2027-08-31 17:00	2028-11-03 13:00
+%R	17604060	12914863	12914870	8660	8660	PR_SS	720			2030-02-26 08:00	2030-01-24 13:00
+%R	17604061	12914870	12914862	8660	8660	PR_FS	-640			2029-12-28 08:00	2030-11-04 13:00
+%R	17604062	12914862	12914872	8660	8660	PR_FS	0			2028-03-31 08:00	2028-11-03 13:00
+%R	17604063	12914875	12914876	8660	8660	PR_FS	40			2025-06-11 17:00	2031-06-24 08:00
+%R	17604064	12914874	12914875	8660	8660	PR_FS	0			2025-08-07 17:00	2031-08-27 08:00
+%R	17604067	12914881	12914880	8660	8660	PR_FS	-144			2025-04-11 00:00	2031-09-04 08:00
+%R	17604068	12914833	12914847	8660	8660	PR_FS	0			2025-04-11 00:00	2027-12-23 08:00
+%R	17604069	12914858	12914834	8660	8660	PR_FS	0			2026-03-12 17:00	2028-11-23 08:00
+%R	17604070	12914802	12914854	8660	8660	PR_FF	0			2027-07-16 17:00	2029-12-26 17:00
+%R	17604071	12914884	12914883	8660	8660	PR_FS	0			2027-05-21 17:00	2029-11-01 08:00
+%R	17604072	12914883	12914855	8660	8660	PR_FF	0			2027-05-21 17:00	2029-10-31 17:00
+%R	17604073	12914854	12914884	8660	8660	PR_FF	0			2027-07-16 17:00	2029-12-26 17:00
+%R	17604074	12914885	12914804	8660	8660	PR_FS	0			2025-12-26 08:00	2028-06-19 13:00
+%R	17604075	12914856	12914885	8660	8660	PR_SS	80			2026-01-08 17:00	2028-02-24 08:00
+%R	17604076	12914841	12914885	8660	8660	PR_SS	540			2026-03-31 12:00	2027-12-13 13:00
+%R	17604077	12914887	12914886	8660	8660	PR_FS	0			2025-07-11 12:00	2031-07-02 13:00
+%R	17654250	12955348	12914880	8660	8660	PR_FS	0			2025-04-11 00:00	2031-03-10 08:00
+%R	17654251	12955349	12914880	8660	8660	PR_FF	0			2025-04-11 00:00	2031-09-30 17:00
+%R	17654252	12955350	12955348	8660	8660	PR_FF	0			2025-08-05 17:00	2031-06-26 17:00
+%R	17788879	13038762	13038763	8660	8660	PR_FF	24			2025-09-12 17:00	2031-09-26 08:00
+%R	17788880	12955351	13038762	8660	8660	PR_FF	0			2025-09-12 17:00	2031-09-30 17:00
+%R	17788882	13038766	13038767	8660	8660	PR_FF	24			2025-11-11 17:00	2031-09-26 08:00
+%R	17788883	13038763	12914874	8660	8660	PR_FF	0			2025-09-09 17:00	2031-09-25 17:00
+%R	17788884	13038767	13038761	8660	8660	PR_FF	40			2025-11-06 17:00	2031-09-19 08:00
+%R	17795770	13045616	12955351	8660	8660	PR_FF	0			2025-11-21 17:00	2031-09-30 17:00
+%R	17795771	13045617	12955350	8660	8660	PR_FS	0			2025-08-05 17:00	2031-06-27 08:00
+%R	17795772	13045618	13045617	8660	8660	PR_FF	0			2025-11-17 17:00	2031-09-30 17:00
+%R	18985130	13863773	12914874	7944	8660	PR_FF	0			2025-09-09 17:00	2031-09-25 17:00
+%R	18985132	13045616	13863770	8660	7944	PR_FF	0			2025-11-21 17:00	2031-09-30 17:00
+%R	18985251	13863887	12914875	8660	8660	PR_FF	0			2025-08-07 17:00	2031-09-30 17:00
+%R	18985253	13863888	12914874	8660	8660	PR_FF	0			2025-09-09 17:00	2031-09-30 17:00
+%R	18985254	13863904	13863903	8660	8660	PR_FS	0			2025-04-11 00:00	2031-06-09 08:00
+%R	18985255	13863905	13863904	8660	8660	PR_FS	0			2025-04-30 17:00	2031-06-27 08:00
+%R	18985256	13863907	13863905	8660	8660	PR_FS	0			2025-05-30 17:00	2031-07-25 08:00
+%R	18985257	13863908	13863907	8660	8660	PR_FS	0			2025-08-08 17:00	2031-09-30 17:00
+%R	18985258	13863911	13863910	8660	8660	PR_FS	0			2025-05-09 17:00	2031-06-03 08:00
+%R	18985259	13863912	13863911	8660	8660	PR_FS	0			2025-05-23 17:00	2031-06-17 08:00
+%R	18985260	13863914	13863912	8660	8660	PR_FS	0			2025-06-30 17:00	2031-07-21 08:00
+%R	18985262	13863917	13863914	8660	8660	PR_FS	0			2025-07-18 17:00	2031-08-08 08:00
+%R	18985263	13863918	13863917	8660	8660	PR_FS	0			2025-08-22 17:00	2031-09-11 08:00
+%R	21082977	15161434	12914870	8660	8660	PR_SS	780			2030-03-03 08:00	2030-08-21 17:00
+%R	21639031	15478019	12914863	8660	8660	PR_SS	0			2030-04-01 08:00	2030-04-04 17:00
+%R	21639032	12914877	12914804	8660	8660	PR_FS	240			2026-02-05 17:00	2030-01-25 08:00
+%R	21639033	15478021	15478020	8660	8660	PR_FS	0			2029-05-25 08:00	2030-04-25 13:00
+%R	21639034	15478020	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2029-03-01 13:00
+%R	21639035	15478022	15478021	8660	8660	PR_FF	0			2029-10-31 08:00	2030-10-01 13:00
+%R	21639036	12914863	15478022	8660	8660	PR_FS	0			2029-10-31 08:00	2030-10-01 13:00
+%R	22854284	16224505	15478019	8660	8660	PR_FS	0			2031-03-31 16:00	2031-06-01 09:00
+%R	22854285	12914803	16224505	8660	8660	PR_FF	0			2031-07-31 12:00	2031-09-30 17:00
+%R	22854286	12914866	12914906	8660	8660	PR_FS	0			2028-03-31 08:00	2030-09-10 09:00
+%R	23132722	16224506	12914867	8660	8660	PR_FS	0			2029-10-31 12:00	2031-07-03 17:00
+%R	23756041	16847806	12914804	8660	8660	PR_FS	0			2025-12-26 08:00	2030-07-01 15:00
+%R	23756042	16847807	16847806	8660	8660	PR_SS	0			2026-03-02 08:00	2030-01-28 15:00
+%R	23756043	16847808	16847807	8660	8660	PR_FS	0			2026-07-30 15:00	2030-11-29 13:00
+%R	23756044	16847809	16847808	8660	8660	PR_FS	0			2026-12-30 12:00	2031-05-01 10:00
+%R	23756045	12914901	12914877	8660	8660	PR_SS	0			2026-02-06 08:00	2029-07-31 13:00
+%T	TASKACTV
+%F	task_id	actv_code_type_id	actv_code_id	proj_id
+%R	12914793	1683	7963	8660
+%R	12914794	1683	7963	8660
+%R	12914795	1683	7963	8660
+%R	12914796	1683	7963	8660
+%R	12914797	1683	7963	8660
+%R	12914798	1683	7963	8660
+%R	12914799	1683	7963	8660
+%R	12914800	1683	7963	8660
+%R	12914801	1683	7963	8660
+%R	12914802	1683	40564	8660
+%R	12914803	1683	7975	8660
+%R	12914804	1683	40564	8660
+%R	12914805	1683	7973	8660
+%R	12914806	1683	7973	8660
+%R	12914807	1683	7973	8660
+%R	12914808	1683	7973	8660
+%R	12914808	16515	130508	8660
+%R	12914809	1683	7973	8660
+%R	12914810	1683	7973	8660
+%R	12914811	1683	7973	8660
+%R	12914812	1683	7973	8660
+%R	12914813	1683	7973	8660
+%R	12914813	16515	130508	8660
+%R	12914814	1683	7973	8660
+%R	12914815	1683	7973	8660
+%R	12914816	1683	7973	8660
+%R	12914817	1683	7973	8660
+%R	12914818	1683	7973	8660
+%R	12914819	1683	7973	8660
+%R	12914820	1683	7973	8660
+%R	12914828	1683	7973	8660
+%R	12914829	1683	7973	8660
+%R	12914830	1683	7973	8660
+%R	12914831	1683	7972	8660
+%R	12914832	1683	7972	8660
+%R	12914833	1683	7972	8660
+%R	12914834	1683	7972	8660
+%R	12914835	1683	8185	8660
+%R	12914836	1683	8185	8660
+%R	12914837	1683	8185	8660
+%R	12914838	1683	8185	8660
+%R	12914839	1683	8185	8660
+%R	12914840	1683	8185	8660
+%R	12914841	1683	7973	8660
+%R	12914842	1683	7973	8660
+%R	12914847	1683	8185	8660
+%R	12914848	1683	7977	8660
+%R	12914852	1683	8185	8660
+%R	12914854	1683	7973	8660
+%R	12914855	1683	7973	8660
+%R	12914856	1683	7973	8660
+%R	12914857	1683	7973	8660
+%R	12914858	1683	7973	8660
+%R	12914859	1683	7973	8660
+%R	12914860	1683	8185	8660
+%R	12914861	1683	339133	8660
+%R	12914862	1683	7963	8660
+%R	12914862	7136	60562	8660
+%R	12914863	1683	339133	8660
+%R	12914863	7136	60569	8660
+%R	12914864	1683	8185	8660
+%R	12914865	1683	339133	8660
+%R	12914866	1683	8185	8660
+%R	12914867	1683	339133	8660
+%R	12914868	1683	8185	8660
+%R	12914869	1683	339133	8660
+%R	12914870	1683	7963	8660
+%R	12914871	1683	7963	8660
+%R	12914872	1683	7963	8660
+%R	12914873	1683	40564	8660
+%R	12914874	1683	40564	8660
+%R	12914875	1683	40564	8660
+%R	12914876	1683	40564	8660
+%R	12914877	1683	7982	8660
+%R	12914880	1683	339934	8660
+%R	12914881	1683	339934	8660
+%R	12914882	1683	7973	8660
+%R	12914883	1683	7973	8660
+%R	12914884	1683	7973	8660
+%R	12914885	1683	8185	8660
+%R	12914886	1683	7973	8660
+%R	12914887	1683	7973	8660
+%R	12914901	1683	8185	8660
+%R	12914903	1683	7982	8660
+%R	12914906	1683	40564	8660
+%R	12914907	1683	339133	8660
+%R	12914908	1683	8185	8660
+%R	12914909	1683	339133	8660
+%R	12914911	1683	7973	8660
+%R	12914912	1683	7973	8660
+%R	12914913	1683	8185	8660
+%R	12914914	1683	7977	8660
+%R	12914915	1683	8185	8660
+%R	12914916	1683	8185	8660
+%R	12914917	1683	7963	8660
+%R	12914918	1683	7963	8660
+%R	12914923	1683	7963	8660
+%R	12914924	1683	7963	8660
+%R	12955348	1683	339934	8660
+%R	12955349	1683	339934	8660
+%R	12955350	1683	339934	8660
+%R	12955351	1683	339934	8660
+%R	13038761	1683	339934	8660
+%R	13038762	1683	339934	8660
+%R	13038763	1683	339934	8660
+%R	13038766	1683	339934	8660
+%R	13038767	1683	339934	8660
+%R	13045616	1683	40564	8660
+%R	13045617	1683	339934	8660
+%R	13045618	1683	339934	8660
+%R	13863887	1683	7977	8660
+%R	13863888	1683	7977	8660
+%R	13863889	1683	7977	8660
+%R	13863890	1683	7977	8660
+%R	13863891	1683	7977	8660
+%R	13863892	1683	7977	8660
+%R	13863893	1683	7977	8660
+%R	13863894	1683	7977	8660
+%R	13863896	1683	339934	8660
+%R	13863897	1683	339934	8660
+%R	13863898	1683	339934	8660
+%R	13863899	1683	339934	8660
+%R	13863900	1683	339934	8660
+%R	13863901	1683	339934	8660
+%R	13863902	1683	339934	8660
+%R	13863903	1683	339934	8660
+%R	13863904	1683	339934	8660
+%R	13863905	1683	339934	8660
+%R	13863906	1683	339934	8660
+%R	13863907	1683	339934	8660
+%R	13863908	1683	339934	8660
+%R	13863909	1683	339934	8660
+%R	13863910	1683	339934	8660
+%R	13863911	1683	339934	8660
+%R	13863912	1683	339934	8660
+%R	13863913	1683	339934	8660
+%R	13863914	1683	339934	8660
+%R	13863916	1683	339934	8660
+%R	13863917	1683	339934	8660
+%R	13863918	1683	339934	8660
+%R	15161434	1683	339133	8660
+%R	15161434	7136	60569	8660
+%R	15478019	1683	339133	8660
+%R	15478020	1683	339133	8660
+%R	15478021	1683	339133	8660
+%R	15478022	1683	339133	8660
+%R	16224505	1683	339133	8660
+%R	16224506	1683	339133	8660
+%R	16847806	1683	7973	8660
+%R	16847807	1683	8185	8660
+%R	16847808	1683	8185	8660
+%R	16847809	1683	8185	8660
+%T	UDFVALUE
+%F	udf_type_id	fk_id	proj_id	udf_date	udf_number	udf_text	udf_code_id
+%R	187	12914808	8660			2407	
+%R	187	12914813	8660			2407	
+%R	188	12914903	8660			DOHWA	
+%E
