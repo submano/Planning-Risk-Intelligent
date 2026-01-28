@@ -1,0 +1,28 @@
+# Core RAG dependencies
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-community>=0.0.20
+chromadb>=0.4.22
+openai>=1.10.0
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+xlrd>=2.0.0
+numpy>=1.24.0
+
+# API
+fastapi>=0.109.0
+uvicorn>=0.27.0
+python-multipart>=0.0.6
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+tiktoken>=0.5.0
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+black>=24.1.0
+ruff>=0.1.0
