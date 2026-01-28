@@ -12,7 +12,7 @@ requires-python = ">=3.10"
 authors = [
     {name = "Planning Risk Intelligence Team"}
 ]
-keywords = ["rag", "p6", "primavera", "risk-management", "project-planning", "llm"]
+keywords = ["rag", "p6", "primavera", "risk-management", "project-planning", "llm", "neo4j", "knowledge-graph"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -27,8 +27,11 @@ dependencies = [
     "langchain>=0.1.0",
     "langchain-openai>=0.0.5",
     "langchain-community>=0.0.20",
+    "langchain-neo4j>=0.1.0",
     "chromadb>=0.4.22",
     "openai>=1.10.0",
+    "neo4j>=5.15.0",
+    "py2neo>=2021.2.4",
     "pandas>=2.0.0",
     "openpyxl>=3.1.0",
     "xlrd>=2.0.0",
