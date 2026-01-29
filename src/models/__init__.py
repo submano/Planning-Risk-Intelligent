@@ -11,9 +11,11 @@ from src.models.schedule import (
     Schedule,
 )
 from src.models.risk import (
+    ExposureType,
     RiskCategory,
     RiskStatus,
     RiskPriority,
+    RiskResponseType,
     Risk,
     RiskRegister,
 )
@@ -27,9 +29,11 @@ __all__ = [
     "Calendar",
     "Project",
     "Schedule",
+    "ExposureType",
     "RiskCategory",
     "RiskStatus",
     "RiskPriority",
+    "RiskResponseType",
     "Risk",
     "RiskRegister",
 ]

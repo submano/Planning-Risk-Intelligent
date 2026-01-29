@@ -54,6 +54,13 @@ class RiskResponseType(str, Enum):
     SHARE = "Share"  # For opportunities
 
 
+class ExposureType(str, Enum):
+    """Risk exposure type (Threat or Opportunity)."""
+    THREAT = "Threat"
+    OPPORTUNITY = "Opportunity"
+    UNKNOWN = "Unknown"
+
+
 class Risk(BaseModel):
     """Individual risk entry."""
     risk_id: str = Field(..., description="Risk unique identifier")
@@ -63,13 +70,21 @@ class Risk(BaseModel):
 
     # Classification
     category: RiskCategory = Field(RiskCategory.OTHER, description="Risk category")
-    subcategory: Optional[str] = Field(None, description="Risk subcategory")
+    subcategory: Optional[str] = Field(None, description="Risk subcategory (e.g., Phase)")
     status: RiskStatus = Field(RiskStatus.OPEN, description="Current risk status")
+    record_type: Optional[str] = Field(None, description="Record type classification")
+    exposure_type: ExposureType = Field(
+        ExposureType.THREAT, description="Risk exposure type (Threat/Opportunity)"
+    )
+    group: Optional[str] = Field(None, description="Risk group")
+    source: Optional[str] = Field(None, description="Risk source")
+    department_category: Optional[str] = Field(None, description="Department categorisation")
 
     # Assessment - Pre-mitigation
     probability: float = Field(
         ..., ge=0.0, le=1.0, description="Probability of occurrence (0-1)"
     )
+    probability_band: Optional[str] = Field(None, description="Probability band/level")
     impact_cost: Optional[float] = Field(None, description="Cost impact if occurs ($)")
     impact_schedule: Optional[float] = Field(
         None, description="Schedule impact if occurs (days)"
@@ -78,12 +93,49 @@ class Risk(BaseModel):
         ..., ge=1, le=5, description="Impact severity score (1-5)"
     )
 
+    # Three-point estimate (pre-mitigation)
+    impact_min: Optional[float] = Field(None, description="Minimum impact value")
+    impact_expected: Optional[float] = Field(None, description="Expected impact value")
+    impact_max: Optional[float] = Field(None, description="Maximum impact value")
+
+    # Risk level and scoring
+    pre_mitigation_level: Optional[str] = Field(
+        None, description="Pre-mitigation risk level"
+    )
+    current_score_band: Optional[str] = Field(None, description="Current score band")
+    simulation_type: Optional[str] = Field(None, description="Simulation type")
+    distribution: Optional[str] = Field(None, description="Probability distribution type")
+    scoring_description: Optional[str] = Field(None, description="Scoring description")
+
     # Assessment - Post-mitigation (residual)
     residual_probability: Optional[float] = Field(
         None, ge=0.0, le=1.0, description="Residual probability after mitigation"
     )
+    residual_probability_band: Optional[str] = Field(
+        None, description="Post-mitigation probability band"
+    )
     residual_impact_score: Optional[float] = Field(
         None, ge=1, le=5, description="Residual impact score after mitigation"
+    )
+    post_mitigation_level: Optional[str] = Field(
+        None, description="Post-mitigation risk level"
+    )
+    post_distribution: Optional[str] = Field(
+        None, description="Post-mitigation distribution"
+    )
+    post_exposure: Optional[float] = Field(
+        None, description="Post-mitigation exposure value"
+    )
+
+    # Three-point estimate (post-mitigation)
+    post_impact_min: Optional[float] = Field(
+        None, description="Post-mitigation minimum impact"
+    )
+    post_impact_expected: Optional[float] = Field(
+        None, description="Post-mitigation expected impact"
+    )
+    post_impact_max: Optional[float] = Field(
+        None, description="Post-mitigation maximum impact"
     )
 
     # Response
@@ -92,6 +144,10 @@ class Risk(BaseModel):
     )
     mitigation_plan: Optional[str] = Field(None, description="Mitigation plan description")
     contingency_plan: Optional[str] = Field(None, description="Contingency plan if risk occurs")
+    consequences: Optional[str] = Field(None, description="Risk consequences if occurs")
+    related_mitigation_count: Optional[int] = Field(
+        None, description="Number of related mitigation details"
+    )
 
     # Assignment
     risk_owner: Optional[str] = Field(None, description="Person responsible for managing risk")
@@ -101,7 +157,9 @@ class Risk(BaseModel):
     identified_date: Optional[datetime] = Field(None, description="Date risk was identified")
     due_date: Optional[datetime] = Field(None, description="Due date for mitigation")
     review_date: Optional[datetime] = Field(None, description="Next review date")
+    last_review_date: Optional[datetime] = Field(None, description="Last review date")
     closed_date: Optional[datetime] = Field(None, description="Date risk was closed")
+    expiry_date: Optional[datetime] = Field(None, description="Risk expiry date")
 
     # Related items
     related_activities: list[str] = Field(
@@ -111,15 +169,18 @@ class Risk(BaseModel):
     related_risks: list[str] = Field(
         default_factory=list, description="Related risk IDs"
     )
+    impact_id: Optional[str] = Field(None, description="Impact ID reference")
 
     # Additional
     trigger_conditions: Optional[str] = Field(
-        None, description="Conditions that trigger the risk"
+        None, description="Conditions that trigger the risk (Cause)"
     )
     early_warning_signs: Optional[str] = Field(
         None, description="Early warning indicators"
     )
-    notes: Optional[str] = Field(None, description="Additional notes")
+    notes: Optional[str] = Field(None, description="Additional notes/remarks")
+    last_review_note: Optional[str] = Field(None, description="Last review note")
+    attributes: Optional[str] = Field(None, description="Additional attributes")
     last_updated: Optional[datetime] = Field(None, description="Last update timestamp")
 
     @computed_field

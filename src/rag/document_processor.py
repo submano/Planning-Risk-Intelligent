@@ -10,7 +10,7 @@ from typing import Optional
 
 from langchain_core.documents import Document
 
-from src.models.risk import Risk, RiskRegister, RiskPriority
+from src.models.risk import ExposureType, Risk, RiskRegister, RiskPriority
 from src.models.schedule import Activity, Schedule, WBSElement
 
 
@@ -398,8 +398,15 @@ Financial Impact Summary:
 - Total Expected Monetary Value (EMV): ${risk_register.total_emv:,.2f}
 - Total Expected Schedule Impact: {risk_register.total_expected_schedule_impact:.1f} days
 
-Risk Status Distribution:
+Risk Exposure Type Distribution:
 """
+        exposure_counts = {}
+        for risk in risk_register.risks:
+            exposure = risk.exposure_type.value
+            exposure_counts[exposure] = exposure_counts.get(exposure, 0) + 1
+        content += self._format_dict(exposure_counts)
+
+        content += "\n\nRisk Status Distribution:\n"
         status_counts = {}
         for risk in risk_register.risks:
             status = risk.status.value
@@ -490,49 +497,105 @@ CRITICAL RISKS ({len(critical)}):
         documents = []
 
         for risk in risk_register.risks:
+            # Build three-point estimate section if available
+            three_point_pre = ""
+            if risk.impact_min is not None or risk.impact_expected is not None or risk.impact_max is not None:
+                three_point_pre = f"""
+Three-Point Estimate (Pre-Mitigation):
+  - Minimum: {risk.impact_min if risk.impact_min is not None else 'N/A'}
+  - Expected: {risk.impact_expected if risk.impact_expected is not None else 'N/A'}
+  - Maximum: {risk.impact_max if risk.impact_max is not None else 'N/A'}
+"""
+
+            three_point_post = ""
+            if risk.post_impact_min is not None or risk.post_impact_expected is not None or risk.post_impact_max is not None:
+                three_point_post = f"""
+Three-Point Estimate (Post-Mitigation):
+  - Minimum: {risk.post_impact_min if risk.post_impact_min is not None else 'N/A'}
+  - Expected: {risk.post_impact_expected if risk.post_impact_expected is not None else 'N/A'}
+  - Maximum: {risk.post_impact_max if risk.post_impact_max is not None else 'N/A'}
+"""
+
+            # Build residual assessment section
+            residual_section = ""
+            if risk.residual_probability is not None or risk.residual_impact_score is not None:
+                residual_section = f"""
+POST-MITIGATION (RESIDUAL) ASSESSMENT:
+- Residual Probability: {risk.residual_probability:.0% if risk.residual_probability is not None else 'Not assessed'}
+- Residual Probability Band: {risk.residual_probability_band or 'N/A'}
+- Residual Impact Score: {risk.residual_impact_score or 'Not assessed'}
+- Post-Mitigation Level: {risk.post_mitigation_level or 'N/A'}
+- Residual Risk Score: {risk.residual_risk_score:.2f if risk.residual_risk_score else 'N/A'}
+{three_point_post}"""
+
             content = f"""RISK DETAIL: {risk.title}
 
 Risk ID: {risk.risk_id}
 Code: {risk.risk_code or 'N/A'}
+Exposure Type: {risk.exposure_type.value}
 Category: {risk.category.value}
+Subcategory/Phase: {risk.subcategory or 'N/A'}
 Status: {risk.status.value}
 Priority: {risk.priority.value}
+Group: {risk.group or 'N/A'}
+Source: {risk.source or 'N/A'}
+Department Category: {risk.department_category or 'N/A'}
 
 DESCRIPTION:
 {risk.description}
 
-RISK ASSESSMENT:
+CONSEQUENCES:
+{risk.consequences or 'Not specified'}
+
+PRE-MITIGATION ASSESSMENT:
 - Probability: {risk.probability:.0%}
+- Probability Band: {risk.probability_band or 'N/A'}
 - Impact Score: {risk.impact_score}/5
 - Risk Score: {risk.risk_score:.2f}
+- Pre-Mitigation Level: {risk.pre_mitigation_level or 'N/A'}
+- Current Score Band: {risk.current_score_band or 'N/A'}
 - Cost Impact: ${risk.impact_cost:,.2f if risk.impact_cost else 'Not quantified'}
 - Schedule Impact: {risk.impact_schedule or 'Not quantified'} days
 - Expected Monetary Value: ${risk.expected_monetary_value:,.2f if risk.expected_monetary_value else 'N/A'}
 - Expected Schedule Impact: {risk.expected_schedule_impact:.1f if risk.expected_schedule_impact else 'N/A'} days
+- Distribution Type: {risk.distribution or 'N/A'}
+- Simulation Type: {risk.simulation_type or 'N/A'}
+{three_point_pre}
+{residual_section}
 
 RESPONSE STRATEGY:
 - Response Type: {risk.response_type.value}
 - Mitigation Plan: {risk.mitigation_plan or 'Not defined'}
 - Contingency Plan: {risk.contingency_plan or 'Not defined'}
+- Related Mitigation Actions: {risk.related_mitigation_count or 'N/A'}
 
 OWNERSHIP:
 - Risk Owner: {risk.risk_owner or 'Unassigned'}
 - Assigned To: {risk.assigned_to or 'Unassigned'}
 
 DATES:
-- Identified: {self._format_date(risk.identified_date)}
+- Identified/Created: {self._format_date(risk.identified_date)}
 - Due Date: {self._format_date(risk.due_date)}
-- Review Date: {self._format_date(risk.review_date)}
+- Next Review Date: {self._format_date(risk.review_date)}
+- Last Review Date: {self._format_date(risk.last_review_date)}
+- Expiry Date: {self._format_date(risk.expiry_date)}
+- Last Updated: {self._format_date(risk.last_updated)}
 
 RELATED ITEMS:
 - Related Activities: {', '.join(risk.related_activities) if risk.related_activities else 'None'}
 - Related WBS: {risk.related_wbs or 'None'}
+- Impact ID: {risk.impact_id or 'N/A'}
 
 TRIGGERS AND WARNINGS:
-- Trigger Conditions: {risk.trigger_conditions or 'Not defined'}
+- Cause/Trigger Conditions: {risk.trigger_conditions or 'Not defined'}
 - Early Warning Signs: {risk.early_warning_signs or 'Not defined'}
 
-NOTES:
+ADDITIONAL INFORMATION:
+- Scoring Description: {risk.scoring_description or 'N/A'}
+- Attributes: {risk.attributes or 'N/A'}
+- Last Review Note: {risk.last_review_note or 'N/A'}
+
+NOTES/REMARKS:
 {risk.notes or 'No additional notes'}
 """
 
@@ -544,10 +607,13 @@ NOTES:
                         "doc_type": "risk_detail",
                         "risk_id": risk.risk_id,
                         "risk_title": risk.title,
+                        "exposure_type": risk.exposure_type.value,
                         "category": risk.category.value,
                         "status": risk.status.value,
                         "priority": risk.priority.value,
                         "risk_score": risk.risk_score,
+                        "pre_mitigation_level": risk.pre_mitigation_level,
+                        "post_mitigation_level": risk.post_mitigation_level,
                         "project_name": risk_register.project_name,
                     },
                 )
@@ -604,8 +670,9 @@ Contingency Plan:
         """Format risk as brief summary."""
         return f"""
 {risk.risk_id}: {risk.title}
-  Score: {risk.risk_score:.2f} | Probability: {risk.probability:.0%} | Impact: {risk.impact_score}/5
+  Type: {risk.exposure_type.value} | Score: {risk.risk_score:.2f} | Probability: {risk.probability:.0%} | Impact: {risk.impact_score}/5
   Category: {risk.category.value} | Status: {risk.status.value}
+  Pre-Mitigation Level: {risk.pre_mitigation_level or 'N/A'} | Post-Mitigation Level: {risk.post_mitigation_level or 'N/A'}
   Owner: {risk.risk_owner or 'Unassigned'}
   EMV: ${risk.expected_monetary_value:,.2f if risk.expected_monetary_value else 'N/A'}
 """

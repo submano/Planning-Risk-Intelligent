@@ -12,6 +12,7 @@ from typing import Any, Optional
 import pandas as pd
 
 from src.models.risk import (
+    ExposureType,
     Risk,
     RiskCategory,
     RiskRegister,
@@ -24,123 +25,174 @@ class RiskRegisterParser:
     """Parser for Excel risk register files."""
 
     # Default column mappings (can be customized)
+    # Supports user's specific risk register format with columns like:
+    # No., Created on, Id, Owner, Next Review Date, Phase, Impact ID, Title, Description,
+    # Status, Record Type, Cause, Simulation Type, Exposure, Distribution, Probability Band,
+    # Probability, Pre Mitigation Risk Level, Min, Expected, Max, Current Score Band,
+    # Post Mitigation Risk Level, Category/Package, Risk Last Updated, Last Review,
+    # Consequences, Mitigation, Remark, Scoring Description, Expiry, Category, Attributes,
+    # Last Review Note, Group, Source, Dpt Categorisation, Min (post), Expected (post), Max (post)
     DEFAULT_COLUMN_MAP = {
         # Core fields
-        "risk_id": ["risk_id", "id", "risk id", "risk #", "risk number", "no", "no."],
+        "risk_id": [
+            "id", "risk_id", "risk id", "risk #", "risk number", "no", "no.",
+            "risk no", "risk no.", "identifier",
+        ],
         "risk_code": ["risk_code", "code", "risk code", "reference", "ref"],
-        "title": ["title", "risk title", "name", "risk name", "risk", "short description"],
+        "title": [
+            "title", "risk title", "name", "risk name", "risk", "short description",
+        ],
         "description": [
-            "description",
-            "risk description",
-            "desc",
-            "details",
-            "full description",
-            "narrative",
+            "description", "risk description", "desc", "details",
+            "full description", "narrative",
         ],
         # Classification
-        "category": ["category", "risk category", "type", "risk type", "area"],
-        "subcategory": ["subcategory", "sub-category", "sub category"],
+        "category": [
+            "category", "risk category", "type", "risk type", "area",
+            "category/package",
+        ],
+        "subcategory": ["subcategory", "sub-category", "sub category", "phase"],
         "status": ["status", "risk status", "state", "current status"],
-        # Probability and Impact
+        "record_type": ["record type", "record_type", "type of record"],
+        "exposure_type": ["exposure", "exposure type", "risk exposure", "threat/opportunity"],
+        "group": ["group", "risk group", "grouping"],
+        "source": ["source", "risk source", "origin"],
+        "department_category": [
+            "dpt categorisation", "dpt_categorisation", "department categorisation",
+            "department category", "dept category", "department",
+        ],
+        # Probability and Impact - Pre-mitigation
         "probability": [
-            "probability",
-            "prob",
-            "likelihood",
-            "prob.",
-            "probability score",
-            "p",
-            "likelihood score",
+            "probability", "prob", "likelihood", "prob.", "probability score",
+            "p", "likelihood score",
+        ],
+        "probability_band": [
+            "probability band", "probability_band", "prob band", "likelihood band",
         ],
         "impact_score": [
-            "impact",
-            "impact score",
-            "severity",
-            "consequence",
-            "i",
-            "impact rating",
+            "impact", "impact score", "severity", "consequence", "i", "impact rating",
         ],
         "impact_cost": [
-            "cost impact",
-            "cost_impact",
-            "impact cost",
-            "$ impact",
-            "financial impact",
-            "cost ($)",
+            "cost impact", "cost_impact", "impact cost", "$ impact",
+            "financial impact", "cost ($)",
         ],
         "impact_schedule": [
-            "schedule impact",
-            "schedule_impact",
-            "time impact",
-            "days impact",
-            "schedule (days)",
-            "delay (days)",
+            "schedule impact", "schedule_impact", "time impact", "days impact",
+            "schedule (days)", "delay (days)",
         ],
-        # Residual
+        # Three-point estimate - Pre-mitigation
+        "impact_min": ["min", "minimum", "min impact", "minimum impact"],
+        "impact_expected": ["expected", "expected impact", "most likely"],
+        "impact_max": ["max", "maximum", "max impact", "maximum impact"],
+        # Risk levels and scoring
+        "pre_mitigation_level": [
+            "pre mitigation risk level", "pre_mitigation_risk_level",
+            "pre-mitigation level", "pre-mitigation risk level",
+            "initial risk level", "inherent risk level",
+        ],
+        "current_score_band": [
+            "current score band", "current_score_band", "score band", "risk band",
+        ],
+        "simulation_type": ["simulation type", "simulation_type", "simulation"],
+        "distribution": ["distribution", "probability distribution", "dist"],
+        "scoring_description": [
+            "scoring description", "scoring_description", "score description",
+        ],
+        # Residual / Post-mitigation
         "residual_probability": [
-            "residual probability",
-            "residual prob",
-            "post-mitigation probability",
-            "mitigated probability",
+            "probability (post)", "probability_post", "residual probability",
+            "residual prob", "post-mitigation probability", "mitigated probability",
+            "post probability",
+        ],
+        "residual_probability_band": [
+            "probability band (post)", "probability_band_post",
+            "post probability band", "residual probability band",
         ],
         "residual_impact_score": [
-            "residual impact",
-            "residual severity",
-            "post-mitigation impact",
-            "mitigated impact",
+            "residual impact", "residual severity", "post-mitigation impact",
+            "mitigated impact", "post impact",
+        ],
+        "post_mitigation_level": [
+            "post mitigation risk level", "post_mitigation_risk_level",
+            "post-mitigation level", "post-mitigation risk level",
+            "residual risk level",
+        ],
+        "post_distribution": [
+            "distribution (post)", "distribution_post", "post distribution",
+        ],
+        "post_exposure": [
+            "exposure (post)", "exposure_post", "post exposure",
+            "residual exposure",
+        ],
+        # Three-point estimate - Post-mitigation
+        "post_impact_min": [
+            "min (post)", "min_post", "minimum (post)", "post min",
+            "residual min",
+        ],
+        "post_impact_expected": [
+            "expected (post)", "expected_post", "post expected",
+            "residual expected",
+        ],
+        "post_impact_max": [
+            "max (post)", "max_post", "maximum (post)", "post max",
+            "residual max",
         ],
         # Response
         "response_type": [
-            "response",
-            "response type",
-            "strategy",
-            "risk response",
-            "treatment",
+            "response", "response type", "strategy", "risk response", "treatment",
         ],
         "mitigation_plan": [
-            "mitigation",
-            "mitigation plan",
-            "mitigation actions",
-            "treatment plan",
-            "response plan",
-            "actions",
+            "mitigation", "mitigation plan", "mitigation actions",
+            "treatment plan", "response plan", "actions",
         ],
         "contingency_plan": [
-            "contingency",
-            "contingency plan",
-            "fallback",
-            "backup plan",
+            "contingency", "contingency plan", "fallback", "backup plan",
+        ],
+        "consequences": [
+            "consequences", "consequence", "effect", "effects", "outcome",
+        ],
+        "related_mitigation_count": [
+            "number of related mitigation details", "related mitigation count",
+            "mitigation count", "no. of mitigations",
         ],
         # Assignment
         "risk_owner": ["owner", "risk owner", "responsible", "accountable"],
         "assigned_to": ["assigned to", "assigned", "assignee", "action owner"],
         # Dates
         "identified_date": [
-            "identified",
-            "identified date",
-            "date identified",
-            "raised date",
-            "creation date",
+            "created on", "created_on", "identified", "identified date",
+            "date identified", "raised date", "creation date", "date created",
         ],
         "due_date": ["due date", "due", "target date", "action due date"],
-        "review_date": ["review date", "next review", "review"],
+        "review_date": [
+            "next review date", "next_review_date", "review date", "next review", "review",
+        ],
+        "last_review_date": ["last review", "last_review", "last review date"],
         "closed_date": ["closed date", "closure date", "date closed"],
+        "expiry_date": ["expiry", "expiry date", "expiration", "expiration date"],
+        "last_updated": [
+            "risk last updated", "risk_last_updated", "last updated",
+            "date updated", "modified date",
+        ],
         # Related items
         "related_activities": [
-            "related activities",
-            "activities",
-            "linked activities",
+            "related activities", "activities", "linked activities",
             "affected activities",
         ],
         "related_wbs": ["wbs", "related wbs", "wbs element", "work package"],
+        "impact_id": ["impact id", "impact_id", "impact reference"],
         # Additional
-        "trigger_conditions": ["trigger", "triggers", "trigger conditions", "cause"],
-        "early_warning_signs": [
-            "early warning",
-            "warning signs",
-            "indicators",
-            "early indicators",
+        "trigger_conditions": [
+            "cause", "trigger", "triggers", "trigger conditions", "root cause",
         ],
-        "notes": ["notes", "comments", "remarks", "additional notes"],
+        "early_warning_signs": [
+            "early warning", "warning signs", "indicators", "early indicators",
+        ],
+        "notes": ["remark", "remarks", "notes", "comments", "additional notes"],
+        "last_review_note": [
+            "last review note", "last_review_note", "review note", "review notes",
+        ],
+        "attributes": ["attributes", "attribute", "custom attributes"],
     }
 
     # Category mappings
@@ -169,6 +221,16 @@ class RiskRegisterParser:
         "contractual": RiskCategory.LEGAL,
         "regulatory": RiskCategory.REGULATORY,
         "compliance": RiskCategory.REGULATORY,
+    }
+
+    # Exposure type mappings
+    EXPOSURE_MAP = {
+        "threat": ExposureType.THREAT,
+        "risk": ExposureType.THREAT,
+        "negative": ExposureType.THREAT,
+        "opportunity": ExposureType.OPPORTUNITY,
+        "positive": ExposureType.OPPORTUNITY,
+        "upside": ExposureType.OPPORTUNITY,
     }
 
     # Status mappings
@@ -318,6 +380,16 @@ class RiskRegisterParser:
             except (ValueError, TypeError):
                 return default
 
+        def get_int(field: str, default: Optional[int] = None) -> Optional[int]:
+            """Get integer value."""
+            val = get_value(field)
+            if val is None:
+                return default
+            try:
+                return int(float(val))
+            except (ValueError, TypeError):
+                return default
+
         def get_date(field: str) -> Optional[datetime]:
             """Get datetime value."""
             val = get_value(field)
@@ -344,6 +416,13 @@ class RiskRegisterParser:
         title = get_str("title")
         description = get_str("description")
 
+        # Include consequences in description if available
+        consequences = get_str("consequences")
+        if consequences and description:
+            description = f"{description}\n\nConsequences: {consequences}"
+        elif consequences and not description:
+            description = consequences
+
         # Skip rows without title/description (likely empty or header rows)
         if not title and not description:
             return None
@@ -368,47 +447,99 @@ class RiskRegisterParser:
         status_str = get_str("status").lower()
         status = self.STATUS_MAP.get(status_str, RiskStatus.OPEN)
 
+        # Parse exposure type (Threat/Opportunity)
+        exposure_str = get_str("exposure_type").lower()
+        exposure_type = self.EXPOSURE_MAP.get(exposure_str, ExposureType.THREAT)
+
         # Parse response type
         response_str = get_str("response_type").lower()
         response_type = self.RESPONSE_MAP.get(response_str, RiskResponseType.MITIGATE)
 
-        # Parse residual values
+        # Parse residual probability
         residual_prob = get_float("residual_probability")
         if residual_prob and residual_prob > 1:
             residual_prob = residual_prob / 100.0
+        if residual_prob is not None:
+            residual_prob = max(0.0, min(1.0, residual_prob))
+
+        # Parse residual impact
         residual_impact = get_float("residual_impact_score")
         if residual_impact and residual_impact > 5:
             residual_impact = residual_impact / 20.0
+        if residual_impact is not None:
+            residual_impact = max(1.0, min(5.0, residual_impact))
+
+        # Get last_updated from file or use current time
+        last_updated = get_date("last_updated") or datetime.now()
 
         return Risk(
             risk_id=risk_id,
             risk_code=get_str("risk_code") or None,
             title=title or f"Risk {risk_id}",
             description=description or title or f"Risk {risk_id}",
+            # Classification
             category=category,
             subcategory=get_str("subcategory") or None,
             status=status,
+            record_type=get_str("record_type") or None,
+            exposure_type=exposure_type,
+            group=get_str("group") or None,
+            source=get_str("source") or None,
+            department_category=get_str("department_category") or None,
+            # Pre-mitigation assessment
             probability=probability,
+            probability_band=get_str("probability_band") or None,
             impact_score=impact_score,
             impact_cost=get_float("impact_cost"),
             impact_schedule=get_float("impact_schedule"),
+            # Three-point estimate (pre-mitigation)
+            impact_min=get_float("impact_min"),
+            impact_expected=get_float("impact_expected"),
+            impact_max=get_float("impact_max"),
+            # Risk levels and scoring
+            pre_mitigation_level=get_str("pre_mitigation_level") or None,
+            current_score_band=get_str("current_score_band") or None,
+            simulation_type=get_str("simulation_type") or None,
+            distribution=get_str("distribution") or None,
+            scoring_description=get_str("scoring_description") or None,
+            # Post-mitigation assessment
             residual_probability=residual_prob,
+            residual_probability_band=get_str("residual_probability_band") or None,
             residual_impact_score=residual_impact,
+            post_mitigation_level=get_str("post_mitigation_level") or None,
+            post_distribution=get_str("post_distribution") or None,
+            post_exposure=get_float("post_exposure"),
+            # Three-point estimate (post-mitigation)
+            post_impact_min=get_float("post_impact_min"),
+            post_impact_expected=get_float("post_impact_expected"),
+            post_impact_max=get_float("post_impact_max"),
+            # Response
             response_type=response_type,
             mitigation_plan=get_str("mitigation_plan") or None,
             contingency_plan=get_str("contingency_plan") or None,
+            consequences=consequences or None,
+            related_mitigation_count=get_int("related_mitigation_count"),
+            # Assignment
             risk_owner=get_str("risk_owner") or None,
             assigned_to=get_str("assigned_to") or None,
+            # Dates
             identified_date=get_date("identified_date"),
             due_date=get_date("due_date"),
             review_date=get_date("review_date"),
+            last_review_date=get_date("last_review_date"),
             closed_date=get_date("closed_date"),
+            expiry_date=get_date("expiry_date"),
+            # Related items
             related_activities=get_list("related_activities"),
             related_wbs=get_str("related_wbs") or None,
+            impact_id=get_str("impact_id") or None,
+            # Additional
             trigger_conditions=get_str("trigger_conditions") or None,
             early_warning_signs=get_str("early_warning_signs") or None,
             notes=get_str("notes") or None,
-            last_updated=datetime.now(),
+            last_review_note=get_str("last_review_note") or None,
+            attributes=get_str("attributes") or None,
+            last_updated=last_updated,
         )
 
 
