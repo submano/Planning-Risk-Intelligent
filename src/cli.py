@@ -52,6 +52,12 @@ def ingest_data():
         action="store_true",
         help="Clear existing data before ingestion",
     )
+    parser.add_argument(
+        "--graph",
+        "-g",
+        action="store_true",
+        help="Also load data into Neo4j knowledge graph",
+    )
 
     args = parser.parse_args()
 
@@ -123,9 +129,9 @@ def ingest_data():
 
     # Add all documents to vector store
     if all_documents:
-        print(f"\nIndexing {len(all_documents)} documents...")
+        print(f"\nIndexing {len(all_documents)} documents to vector store...")
         vectorstore.add_documents(all_documents)
-        print("Indexing complete!")
+        print("Vector store indexing complete!")
 
         stats = vectorstore.get_collection_stats()
         print(f"\nVector store statistics:")
@@ -134,6 +140,61 @@ def ingest_data():
         print(f"  Persist directory: {stats['persist_directory']}")
     else:
         print("No documents to index.")
+
+    # Load data into Neo4j knowledge graph if requested
+    if args.graph:
+        print("\n" + "=" * 50)
+        print("Loading data into Neo4j knowledge graph...")
+        print("=" * 50)
+
+        try:
+            from src.graph.store import GraphStore
+            from src.graph.loader import GraphDataLoader
+
+            # Initialize graph store and loader
+            graph_store = GraphStore()
+            loader = GraphDataLoader(graph_store)
+
+            # Initialize schema
+            print("Initializing graph schema...")
+            graph_store.initialize_schema()
+
+            project_id = None
+
+            # Load schedule into graph
+            if args.schedule:
+                print(f"\nLoading schedule into graph...")
+                schedule_stats = loader.load_schedule(schedule, clear_existing=args.clear)
+                project_id = schedule.project.project_id
+                print(f"  Loaded: {schedule_stats}")
+
+            # Load risk register into graph
+            if args.risk_register:
+                print(f"\nLoading risk register into graph...")
+                risk_stats = loader.load_risk_register(risk_register, project_id=project_id)
+                print(f"  Loaded: {risk_stats}")
+
+            # Show graph statistics
+            print("\nNeo4j graph statistics:")
+            node_counts = graph_store.execute_read("""
+                MATCH (n)
+                RETURN labels(n)[0] AS type, count(n) AS count
+                ORDER BY count DESC
+            """)
+            for record in node_counts:
+                print(f"  {record['type']}: {record['count']} nodes")
+
+            print("\nGraph loading complete!")
+
+        except ImportError as e:
+            print(f"\nWarning: Could not import graph modules: {e}")
+            print("Make sure neo4j is installed: pip install neo4j")
+        except Exception as e:
+            print(f"\nError loading data into Neo4j: {e}")
+            print("Check your Neo4j connection settings in .env file:"
+                  "\n  NEO4J_URI=bolt://localhost:7687"
+                  "\n  NEO4J_USERNAME=neo4j"
+                  "\n  NEO4J_PASSWORD=your-password")
 
 
 def query():
