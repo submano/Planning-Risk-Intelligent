@@ -521,11 +521,11 @@ Three-Point Estimate (Post-Mitigation):
             if risk.residual_probability is not None or risk.residual_impact_score is not None:
                 residual_section = f"""
 POST-MITIGATION (RESIDUAL) ASSESSMENT:
-- Residual Probability: {risk.residual_probability:.0% if risk.residual_probability is not None else 'Not assessed'}
+- Residual Probability: {self._format_percent(risk.residual_probability, 'Not assessed')}
 - Residual Probability Band: {risk.residual_probability_band or 'N/A'}
 - Residual Impact Score: {risk.residual_impact_score or 'Not assessed'}
 - Post-Mitigation Level: {risk.post_mitigation_level or 'N/A'}
-- Residual Risk Score: {risk.residual_risk_score:.2f if risk.residual_risk_score else 'N/A'}
+- Residual Risk Score: {self._format_float(risk.residual_risk_score, 2, 'N/A')}
 {three_point_post}"""
 
             content = f"""RISK DETAIL: {risk.title}
@@ -554,10 +554,10 @@ PRE-MITIGATION ASSESSMENT:
 - Risk Score: {risk.risk_score:.2f}
 - Pre-Mitigation Level: {risk.pre_mitigation_level or 'N/A'}
 - Current Score Band: {risk.current_score_band or 'N/A'}
-- Cost Impact: ${risk.impact_cost:,.2f if risk.impact_cost else 'Not quantified'}
+- Cost Impact: {self._format_currency(risk.impact_cost)}
 - Schedule Impact: {risk.impact_schedule or 'Not quantified'} days
-- Expected Monetary Value: ${risk.expected_monetary_value:,.2f if risk.expected_monetary_value else 'N/A'}
-- Expected Schedule Impact: {risk.expected_schedule_impact:.1f if risk.expected_schedule_impact else 'N/A'} days
+- Expected Monetary Value: {self._format_currency(risk.expected_monetary_value, 'N/A')}
+- Expected Schedule Impact: {self._format_float(risk.expected_schedule_impact, 1, 'N/A')} days
 - Distribution Type: {risk.distribution or 'N/A'}
 - Simulation Type: {risk.simulation_type or 'N/A'}
 {three_point_pre}
@@ -666,6 +666,24 @@ Contingency Plan:
         """Format dictionary as indented list."""
         return "\n".join(f"  - {k}: {v}" for k, v in d.items())
 
+    def _format_currency(self, value: Optional[float], default: str = "Not quantified") -> str:
+        """Format currency value."""
+        if value is None:
+            return default
+        return f"${value:,.2f}"
+
+    def _format_float(self, value: Optional[float], decimals: int = 1, default: str = "N/A") -> str:
+        """Format float value."""
+        if value is None:
+            return default
+        return f"{value:.{decimals}f}"
+
+    def _format_percent(self, value: Optional[float], default: str = "N/A") -> str:
+        """Format percentage value."""
+        if value is None:
+            return default
+        return f"{value:.0%}"
+
     def _format_risk_summary(self, risk: Risk) -> str:
         """Format risk as brief summary."""
         return f"""
@@ -674,5 +692,5 @@ Contingency Plan:
   Category: {risk.category.value} | Status: {risk.status.value}
   Pre-Mitigation Level: {risk.pre_mitigation_level or 'N/A'} | Post-Mitigation Level: {risk.post_mitigation_level or 'N/A'}
   Owner: {risk.risk_owner or 'Unassigned'}
-  EMV: ${risk.expected_monetary_value:,.2f if risk.expected_monetary_value else 'N/A'}
+  EMV: {self._format_currency(risk.expected_monetary_value, 'N/A')}
 """
