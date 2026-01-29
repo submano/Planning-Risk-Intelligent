@@ -158,7 +158,7 @@ class PlanningRiskRetriever(BaseRetriever):
         }
         return filters.get(query_type)
 
-    def _get_documents(
+    def _get_relevant_documents(
         self,
         query: str,
         *,
