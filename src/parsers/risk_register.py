@@ -386,7 +386,8 @@ class RiskRegisterParser:
         def get_str(field: str, default: str = "") -> str:
             """Get string value."""
             val = get_value(field, default)
-            return str(val).strip() if val else default
+            # Use 'is not None' to handle numeric 0 values correctly
+            return str(val).strip() if val is not None else default
 
         def get_float(field: str, default: Optional[float] = None) -> Optional[float]:
             """Get float value."""
@@ -427,7 +428,14 @@ class RiskRegisterParser:
             val = get_str(field)
             if not val:
                 return []
-            return [item.strip() for item in val.split(",") if item.strip()]
+            # Split by comma and filter out empty items and standalone "0" placeholders
+            items = []
+            for item in val.split(","):
+                item = item.strip()
+                # Skip empty items and standalone "0" (often used as placeholder)
+                if item and item != "0":
+                    items.append(item)
+            return items
 
         # Get required fields
         risk_id = get_str("risk_id") or str(row_idx + 1)
