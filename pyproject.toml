@@ -41,6 +41,7 @@ dependencies = [
     "uvicorn>=0.27.0",
     "tiktoken>=0.5.0",
     "numpy>=1.24.0",
+    "streamlit>=1.30.0",
 ]
 
 [project.optional-dependencies]
@@ -56,6 +57,7 @@ dev = [
 pri-server = "src.api.main:run_server"
 pri-ingest = "src.cli:ingest_data"
 pri-query = "src.cli:query"
+pri-web = "src.cli:run_web"
 
 [tool.setuptools.packages.find]
 where = ["."]

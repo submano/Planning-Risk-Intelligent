@@ -391,6 +391,34 @@ def query():
             print(f"Error: {e}")
 
 
+def run_web():
+    """CLI command to run the Streamlit web interface."""
+    import subprocess
+    from pathlib import Path
+
+    # Get the path to the Streamlit app
+    app_path = Path(__file__).parent / "web" / "app.py"
+
+    if not app_path.exists():
+        print(f"Error: Web app not found at {app_path}")
+        sys.exit(1)
+
+    print("Starting Planning & Risk Intelligence Web Interface...")
+    print("Open your browser to http://localhost:8501")
+    print("Press Ctrl+C to stop the server")
+
+    try:
+        subprocess.run(
+            ["streamlit", "run", str(app_path), "--server.headless", "true"],
+            check=True,
+        )
+    except KeyboardInterrupt:
+        print("\nShutting down...")
+    except FileNotFoundError:
+        print("Error: Streamlit not found. Install it with: pip install streamlit")
+        sys.exit(1)
+
+
 if __name__ == "__main__":
     # Default to query mode if run directly
     query()
