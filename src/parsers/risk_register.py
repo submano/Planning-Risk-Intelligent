@@ -176,8 +176,9 @@ class RiskRegisterParser:
         ],
         # Related items
         "related_activities": [
+            "activity id", "activity_id", "activity ids", "activity_ids",
             "related activities", "activities", "linked activities",
-            "affected activities",
+            "affected activities", "associated activities",
         ],
         "related_wbs": ["wbs", "related wbs", "wbs element", "work package"],
         "impact_id": ["impact id", "impact_id", "impact reference"],
