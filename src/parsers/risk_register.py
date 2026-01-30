@@ -331,7 +331,10 @@ class RiskRegisterParser:
         field_to_column = self._map_columns(df.columns.tolist())
 
         if verbose:
+            print(f"  Available columns: {df.columns.tolist()}")
             print(f"  Column mapping: {field_to_column}")
+            if "related_activities" in field_to_column:
+                print(f"  Activity ID column found: '{field_to_column['related_activities']}'")
 
         risks = []
         skipped_rows = []
@@ -350,6 +353,18 @@ class RiskRegisterParser:
 
         if verbose and skipped_rows:
             print(f"  Skipped rows (no title/description): {skipped_rows}")
+
+        # Show risks with Activity IDs in verbose mode
+        if verbose:
+            risks_with_activities = [
+                r for r in risks if r.related_activities
+            ]
+            if risks_with_activities:
+                print(f"  Risks with Activity IDs: {len(risks_with_activities)}")
+                for r in risks_with_activities[:5]:  # Show first 5
+                    print(f"    - Risk {r.risk_id}: {r.related_activities}")
+            else:
+                print("  Risks with Activity IDs: 0 (no Activity IDs found)")
 
         return RiskRegister(
             project_name=project_name,
