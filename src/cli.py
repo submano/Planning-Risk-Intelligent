@@ -58,6 +58,12 @@ def ingest_data():
         action="store_true",
         help="Also load data into Neo4j knowledge graph",
     )
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="Show detailed parsing information",
+    )
 
     args = parser.parse_args()
 
@@ -115,7 +121,7 @@ def ingest_data():
 
         print(f"Parsing risk register: {args.risk_register}")
         risk_parser = RiskRegisterParser()
-        risk_register = risk_parser.parse_file(risk_path)
+        risk_register = risk_parser.parse_file(risk_path, verbose=args.verbose)
 
         print(f"  Total Risks: {risk_register.total_risks}")
         print(f"  Open Risks: {len(risk_register.open_risks)}")

@@ -276,6 +276,7 @@ class RiskRegisterParser:
         file_path: str | Path,
         sheet_name: str | int = 0,
         header_row: int = 0,
+        verbose: bool = False,
     ) -> RiskRegister:
         """
         Parse an Excel risk register file.
@@ -284,6 +285,7 @@ class RiskRegisterParser:
             file_path: Path to the Excel file
             sheet_name: Sheet name or index (default: first sheet)
             header_row: Row number containing headers (0-indexed)
+            verbose: Print detailed parsing information
 
         Returns:
             RiskRegister object with all parsed risks
@@ -299,7 +301,10 @@ class RiskRegisterParser:
             header=header_row,
         )
 
-        return self._parse_dataframe(df, file_path.stem)
+        if verbose:
+            print(f"  Excel rows (excluding header): {len(df)}")
+
+        return self._parse_dataframe(df, file_path.stem, verbose=verbose)
 
     def parse_dataframe(self, df: pd.DataFrame, project_name: str = "") -> RiskRegister:
         """
@@ -314,7 +319,9 @@ class RiskRegisterParser:
         """
         return self._parse_dataframe(df, project_name)
 
-    def _parse_dataframe(self, df: pd.DataFrame, project_name: str = "") -> RiskRegister:
+    def _parse_dataframe(
+        self, df: pd.DataFrame, project_name: str = "", verbose: bool = False
+    ) -> RiskRegister:
         """Internal method to parse DataFrame to RiskRegister."""
         # Normalize column names
         df.columns = df.columns.str.lower().str.strip()
@@ -322,16 +329,26 @@ class RiskRegisterParser:
         # Build column mapping for this specific file
         field_to_column = self._map_columns(df.columns.tolist())
 
+        if verbose:
+            print(f"  Column mapping: {field_to_column}")
+
         risks = []
+        skipped_rows = []
         for idx, row in df.iterrows():
             try:
                 risk = self._parse_row(row, field_to_column, idx)
                 if risk:
                     risks.append(risk)
+                else:
+                    skipped_rows.append(idx + 2)  # +2 for Excel row (1-indexed + header)
             except Exception as e:
                 # Log warning but continue parsing
-                print(f"Warning: Failed to parse row {idx}: {e}")
+                print(f"Warning: Failed to parse row {idx + 2}: {e}")
+                skipped_rows.append(idx + 2)
                 continue
+
+        if verbose and skipped_rows:
+            print(f"  Skipped rows (no title/description): {skipped_rows}")
 
         return RiskRegister(
             project_name=project_name,
