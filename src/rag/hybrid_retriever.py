@@ -6,7 +6,7 @@ for comprehensive query responses.
 """
 
 import re
-from typing import Optional
+from typing import ClassVar, Optional
 
 from langchain_core.callbacks import CallbackManagerForRetrieverRun
 from langchain_core.documents import Document
@@ -31,11 +31,8 @@ class HybridRetriever(BaseRetriever):
     top_k: int = Field(default=5, description="Number of documents to retrieve")
     use_graph: bool = Field(default=True, description="Enable graph traversal")
 
-    class Config:
-        arbitrary_types_allowed = True
-
-    # Query patterns that benefit from graph traversal
-    GRAPH_QUERY_PATTERNS = {
+    # Query patterns that benefit from graph traversal (ClassVar to exclude from Pydantic fields)
+    GRAPH_QUERY_PATTERNS: ClassVar[dict[str, list[str]]] = {
         "critical_path": [
             r"critical path",
             r"critical activities",
@@ -86,6 +83,9 @@ class HybridRetriever(BaseRetriever):
             r"risky activities",
         ],
     }
+
+    class Config:
+        arbitrary_types_allowed = True
 
     def _needs_graph_traversal(self, query: str) -> tuple[bool, str]:
         """
