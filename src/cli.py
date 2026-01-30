@@ -234,6 +234,12 @@ def query():
         action="store_true",
         help="Enter interactive query mode",
     )
+    parser.add_argument(
+        "--use-graph",
+        "-g",
+        action="store_true",
+        help="Enable hybrid mode: combine ChromaDB with Neo4j graph traversal",
+    )
 
     args = parser.parse_args()
 
@@ -242,7 +248,7 @@ def query():
 
     print("Initializing Planning & Risk Intelligence...")
 
-    # Initialize components
+    # Initialize vector store
     vectorstore = VectorStoreManager(
         persist_directory=args.persist_dir,
         collection_name=args.collection,
@@ -255,7 +261,43 @@ def query():
 
     print(f"Loaded {stats['count']} documents from vector store")
 
-    rag_chain = PlanningRiskRAGChain(vectorstore_manager=vectorstore)
+    # Initialize graph store if hybrid mode enabled
+    graph_store = None
+    if args.use_graph:
+        try:
+            from src.graph.store import GraphStore
+            graph_store = GraphStore()
+            # Test connection
+            node_count = graph_store.execute_read(
+                "MATCH (n) RETURN count(n) as count"
+            )
+            if node_count and node_count[0]["count"] > 0:
+                print(f"Connected to Neo4j graph ({node_count[0]['count']} nodes)")
+            else:
+                print("Warning: Neo4j is empty. Run 'pri-ingest --graph' to load data.")
+                graph_store = None
+        except Exception as e:
+            print(f"Warning: Could not connect to Neo4j: {e}")
+            print("Falling back to vector-only mode.")
+            graph_store = None
+
+    # Create RAG chain with appropriate retriever
+    if graph_store:
+        from src.rag.hybrid_retriever import HybridRetriever
+        print("Using HYBRID mode (ChromaDB + Neo4j)")
+        retriever = HybridRetriever(
+            vectorstore_manager=vectorstore,
+            graph_store=graph_store,
+            top_k=5,
+            use_graph=True,
+        )
+        rag_chain = PlanningRiskRAGChain(
+            vectorstore_manager=vectorstore,
+            retriever=retriever,
+        )
+    else:
+        print("Using VECTOR mode (ChromaDB only)")
+        rag_chain = PlanningRiskRAGChain(vectorstore_manager=vectorstore)
 
     def process_query(question: str):
         """Process a single query."""

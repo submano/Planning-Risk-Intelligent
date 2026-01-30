@@ -108,6 +108,7 @@ class PlanningRiskRAGChain:
         temperature: float = 0.1,
         max_tokens: int = 2000,
         top_k: int = 5,
+        retriever: Optional[Any] = None,
     ):
         """
         Initialize the RAG chain.
@@ -118,6 +119,7 @@ class PlanningRiskRAGChain:
             temperature: LLM temperature (lower = more focused)
             max_tokens: Maximum tokens in response
             top_k: Number of documents to retrieve
+            retriever: Optional custom retriever (e.g., HybridRetriever)
         """
         self.vectorstore_manager = vectorstore_manager
 
@@ -128,11 +130,14 @@ class PlanningRiskRAGChain:
             max_tokens=max_tokens,
         )
 
-        # Initialize retriever
-        self.retriever = PlanningRiskRetriever(
-            vectorstore_manager=vectorstore_manager,
-            top_k=top_k,
-        )
+        # Use provided retriever or create default
+        if retriever is not None:
+            self.retriever = retriever
+        else:
+            self.retriever = PlanningRiskRetriever(
+                vectorstore_manager=vectorstore_manager,
+                top_k=top_k,
+            )
 
         # Create prompt
         self.prompt = ChatPromptTemplate.from_messages([
